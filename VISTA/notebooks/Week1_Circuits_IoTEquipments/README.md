@@ -8,11 +8,6 @@
 
 ---
 
-## 📘 Study Materials
-- **Course:** [Introduction to the Internet of Things and Embedded Systems – UC Irvine](https://www.coursera.org/learn/iot)
-- **Supplementary:** [Khan Academy – Intro to Circuits](https://www.khanacademy.org/science/electrical-engineering)
-
----
 
 ## 🧱 Core Concepts
 
