@@ -32,3 +32,4 @@ The typical lifecycle includes:
 - **Bias**: May reflect training data inaccuracies
 
 > Generative AI is a game-changer in mobile app development—but thoughtful use is key to balancing innovation with responsibility.
+
