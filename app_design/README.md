@@ -10,14 +10,15 @@ The typical lifecycle includes:
 6. **Support** – Post-launch assistance
 
 ## 🤖 Role of Generative AI at Each Stage
-| Stage        | Generative AI Use Case                                      |
-|--------------|-------------------------------------------------------------|
-| Design       | Generates UI layouts and color schemes based on user data   |
-| Development  | Suggests code via natural language (e.g., GitHub Copilot)   |
-| Testing      | Automates test case generation and bug simulation           |
-| Publishing   | Optimizes app store metadata and descriptions               |
-| Marketing    | Personalizes ads and email campaigns using user behavior    |
-| Support      | Powers chatbots for instant, automated responses            |
+| **Feature**                 | **Description**                                             | **Example**                                                | **Tool**                |
+|----------------------------|-------------------------------------------------------------|------------------------------------------------------------|-------------------------|
+| **Personalization at Scale** | Tailors recommendations & promotions based on user behavior | Strategy games app suggesting genre-specific offers        | **ChatGPT, Salesforce Einstein, Segment AI** |
+| **Automated Content Generation** | Speeds up blogs, emails, and social posts                     | VR game blog updates via Copy.ai or Jasper                 | **Copy.ai, Jasper**     |
+| **Cost Efficiency**         | Reduces manual effort, enabling focus on strategy           | Quick creation of marketing content                        | **Jasper, Copy.ai**     |
+| **Ad Optimization**         | Generates and tests ad variations fast                      | AdCreative.ai boosts AR/VR ad performance                  | **AdCreative.ai**       |
+| **User Engagement**         | Intelligent chatbots enhance in-app interaction             | AR app guiding users via AI assistant                      | **ChatGPT, Kuki.ai**    |
+| **Predictive Analytics**    | Forecasts churn and suggests retention actions              | AI-powered Google Analytics alerts for player drop-off     | **Google Analytics AI, Salesforce Einstein** |
+
 
 ## 🚀 Opportunities
 - **Efficiency**: Automates repetitive tasks
