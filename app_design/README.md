@@ -172,14 +172,17 @@ DeepAR offers powerful AR tools to boost user engagement across mobile apps:
 With rising competition in the app space, **Generative AI (GenAI)** offers personalized, cost-efficient, and scalable marketing strategies—perfect for gaming and AR/VR apps.
 
 ## 💡 Key Benefits of GenAI in Marketing
-| Feature | Description | Example |
-|--------|-------------|---------|
-| **Personalization at Scale** | Tailors recommendations & promotions based on user behavior | Strategy games app suggesting genre-specific offers |
-| **Automated Content Generation** | Speeds up blogs, emails, and social posts | VR game blog updates via *Copy.ai* or *Jasper* |
-| **Cost Efficiency** | Reduces manual effort, enabling focus on strategy | Quick creation of marketing content |
-| **Ad Optimization** | Generates and tests ad variations fast | *AdCreative.ai* boosts AR/VR ad performance |
-| **User Engagement** | Intelligent chatbots enhance in-app interaction | AR app guiding users via AI assistant |
-| **Predictive Analytics** | Forecasts churn and suggests retention actions | AI-powered Google Analytics alerts for player drop-off |
+
+| **Feature**                 | **Description**                                             | **Example**                                                | **Tool**                |
+|----------------------------|-------------------------------------------------------------|------------------------------------------------------------|-------------------------|
+| **Personalization at Scale** | Tailors recommendations & promotions based on user behavior | Strategy games app suggesting genre-specific offers        | **ChatGPT, Salesforce Einstein, Segment AI** |
+| **Automated Content Generation** | Speeds up blogs, emails, and social posts                     | VR game blog updates via Copy.ai or Jasper                 | **Copy.ai, Jasper**     |
+| **Cost Efficiency**         | Reduces manual effort, enabling focus on strategy           | Quick creation of marketing content                        | **Jasper, Copy.ai**     |
+| **Ad Optimization**         | Generates and tests ad variations fast                      | AdCreative.ai boosts AR/VR ad performance                  | **AdCreative.ai**       |
+| **User Engagement**         | Intelligent chatbots enhance in-app interaction             | AR app guiding users via AI assistant                      | **ChatGPT, Kuki.ai**    |
+| **Predictive Analytics**    | Forecasts churn and suggests retention actions              | AI-powered Google Analytics alerts for player drop-off     | **Google Analytics AI, Salesforce Einstein** |
+
+
 
 ## 🛠️ Tools to Power GenAI Marketing
 - **Jasper** – AI copywriting for blog, email, and ads
