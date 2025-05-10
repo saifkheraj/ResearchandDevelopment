@@ -244,11 +244,12 @@ Generative AI transforms app support by offering:
 
 ## 📱 Real-World Use Cases
 
-| App        | Use Case                                                |
-|------------|----------------------------------------------------------|
-| **Snapchat** | AI chatbots assist with app navigation and feature use |
-| **Duolingo** | Personalized learning paths based on user behavior     |
-| **Airbnb**   | AI support for seamless booking and inquiries          |
+| **App**      | **Use Case**                                                | **Tool/Platform**                     |
+|--------------|-------------------------------------------------------------|----------------------------------------|
+| **Snapchat** | AI chatbots assist with app navigation and feature use      | **Snap AI, GPT-3.5/4 (via Snap Kit)**  |
+| **Duolingo** | Personalized learning paths based on user behavior          | **Duolingo Max (GPT-4 by OpenAI)**     |
+| **Airbnb**   | AI support for seamless booking and inquiries               | **Zendesk, Custom GPT-based chatbot**  |
+
 
 ---
 
