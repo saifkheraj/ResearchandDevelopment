@@ -32,6 +32,21 @@ IoT systems are built using a **combination of hardware and software**, and the 
 
 This is **normal** and part of every IoT project.
 
+🔌 What’s on the Arduino UNO Board?
+✅ Microcontroller – Runs your code
+
+✅ USB Port – Connects to your PC
+
+✅ DC Power Jack – External power if needed
+
+✅ Reset Button – Restart your program
+
+✅ Digital Pins (14) – For buttons, sensors, LEDs
+
+✅ Analog Pins (6) – For sensors with variable input (e.g. temperature, light)
+
+✅ Power Pins – To give 5V or GND to components
+
 ---
 
 ## 🛒 Selecting and Buying Components
