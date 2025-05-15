@@ -1,4 +1,6 @@
+# Recreating and updating README.md with IDE Installation & Setup section
 
+content = """# 🚀 Getting Started with Arduino: A Beginner's Guide
 
 ## 🌟 What is Arduino?
 
@@ -99,13 +101,46 @@ Arduino solves this by:
 
 ---
 
-## 🧑‍💻 Software: Arduino IDE
+## 🧑‍💻 Software: Arduino IDE Installation & Setup
 
-To start coding:
-1. Install the **Arduino IDE**
-2. Connect your board via USB
-3. Write your first sketch (program)
-4. Upload and run it on the board!
+Arduino IDE runs on **Windows, Linux,** and **MacOS**. It includes:
+- **Text editor** for writing code  
+- **Compiler** to translate code  
+- **Uploader** to send code to your board  
+- **Utilities** to simplify development
+
+### 1. Download & Install
+1. Visit the [Arduino Software Page](https://www.arduino.cc/en/software).  
+2. Choose **Arduino IDE 2.x (latest)** or **IDE 1.x (legacy)**. Both work for this course.  
+3. Download the installer for your OS (Windows, macOS, Linux).  
+4. Run the installer and follow prompts (accept license, choose install location).  
+5. Launch the Arduino IDE from your desktop or applications menu.
+
+### 2. Basic Setup
+- **Board & Port**:  
+  - Connect your Arduino via USB.  
+  - In **Tools → Board**, select your board (e.g., Arduino Uno).  
+  - In **Tools → Port**, choose the correct serial port.
+
+### 3. Editor Customization (IDE 2.x)
+- **Font Size**:  
+  - Go to **File → Preferences**.  
+  - Set **Editor Font Size** (e.g., 18) for comfortable reading.
+- **Interface Scale**:  
+  - In **Preferences**, adjust **Interface Scale** (e.g., 1.2×) to enlarge UI.
+- **Theme**:  
+  - In **Preferences**, switch between **Light** and **Dark** theme.
+
+### 4. Tips for IDE 1.x
+- **Zoom**: Press **Ctrl/Cmd + Scroll** to zoom in/out.
+- **Line Numbers**: Enable via **File → Preferences → Display Line Number**.
+- **Custom Font**:  
+  1. Close the IDE.  
+  2. Edit `preferences.txt` (in IDE settings folder).  
+  3. Change `editor.font=monospace` to `editor.font=Consolas`.  
+  4. Restart the IDE.
+
+> With your IDE installed and configured, you're ready to write and upload your first sketch!
 
 ---
 
@@ -159,5 +194,5 @@ You'll always find help and inspiration!
 
 ### 📚 Ready to Start?
 
-Download the detailed hardware list and purchasing guide (PDF linked in video) to get everything you need. Once you have your kit or simulator set up, let’s dive into your first project: **Blinking an LED**!
+Download the detailed hardware list and purchasing guide (PDF linked in video) to get everything you need. Once your IDE and kit or simulator are set up, let’s dive into your first project: **Blinking an LED**!
 """
