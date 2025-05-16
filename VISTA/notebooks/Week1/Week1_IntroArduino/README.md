@@ -4,6 +4,7 @@ content = """# 🚀 Getting Started with Arduino: A Beginner's Guide
 
 ## 🌟 What is Arduino?
 
+
 **Arduino** is an open-source electronics platform that combines:
 - **Hardware**: A small, inexpensive electronic board
 - **Software**: A simple programming environment to write and upload code to the board
