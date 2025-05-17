@@ -1,9 +1,6 @@
-# Recreating and updating README.md with IDE Installation & Setup section
 
-content = """# 🚀 Getting Started with Arduino: A Beginner's Guide
 
 ## 🌟 What is Arduino?
-
 
 **Arduino** is an open-source electronics platform that combines:
 - **Hardware**: A small, inexpensive electronic board
@@ -197,3 +194,4 @@ You'll always find help and inspiration!
 
 Download the detailed hardware list and purchasing guide (PDF linked in video) to get everything you need. Once your IDE and kit or simulator are set up, let’s dive into your first project: **Blinking an LED**!
 """
+
