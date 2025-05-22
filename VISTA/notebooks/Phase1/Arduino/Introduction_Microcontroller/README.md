@@ -195,3 +195,58 @@ You'll always find help and inspiration!
 Download the detailed hardware list and purchasing guide (PDF linked in video) to get everything you need. Once your IDE and kit or simulator are set up, let’s dive into your first project: **Blinking an LED**!
 """
 
+# Arduino Blink Example
+
+## Overview
+
+This project demonstrates the simplest Arduino sketch: blinking the built-in LED on and off in a continuous loop. It’s a great first step to get familiar with Arduino programming and the Tinkercad Circuits simulator.
+
+## Files
+
+- `blink.ino` — the main Arduino sketch containing the blink code.
+
+## Requirements
+
+- **Hardware (real-world):**  
+  - Arduino Uno (or any Arduino with a built-in LED on pin `LED_BUILTIN`)  
+  - USB cable to connect the Arduino to your computer  
+
+- **Software (simulation):**  
+  - [Tinkercad Circuits](https://www.tinkercad.com/circuits) account  
+
+## Installation & Setup
+
+1. **Real hardware:**  
+   - Connect your Arduino board to your computer via USB.  
+   - Launch the Arduino IDE, open `blink.ino`, select the correct board and COM port under **Tools**, then click **Upload**.  
+
+2. **Tinkercad Circuits (simulation):**  
+   - Log in to Tinkercad and create a new **Circuit**.  
+   - Drag an **Arduino Uno** onto the workspace.  
+   - Click **Code**, switch to **Text** mode, delete any boilerplate and copy-paste the contents of `blink.ino`.  
+   - Click **Start Simulation** to see the LED blink.
+
+## Code Explanation
+
+```cpp
+void setup() {
+  // Configure the built-in LED pin as an OUTPUT
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+
+void setup(): Runs once when the board powers up or resets.
+
+pinMode(LED_BUILTIN, OUTPUT): LED_BUILTIN refers to the onboard LED pin (usually D13 on an Uno). Setting it to OUTPUT allows the pin to drive the LED HIGH or LOW.
+
+void loop(): Executes repeatedly after setup() completes.
+
+digitalWrite(LED_BUILTIN, HIGH): Sets the LED pin to HIGH (+5 V), turning the LED on.
+
+delay(1): Pauses execution for 1 ms.
+
+💡 To see a visible blink, you’ll usually want delay(500); (0.5 s) or delay(1000); (1 s).
+
+digitalWrite(LED_BUILTIN, LOW): Sets the LED pin to LOW (0 V), turning the LED off.
+
+delay(1): Pauses another 1 ms, completing one on/off cycle.
