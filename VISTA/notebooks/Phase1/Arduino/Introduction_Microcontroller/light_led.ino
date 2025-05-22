@@ -16,4 +16,3 @@ void loop() {
   // Wait for another second
   delay(1);
 }
-
