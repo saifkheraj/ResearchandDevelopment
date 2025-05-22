@@ -222,6 +222,9 @@ In the loop
 
 ---
 
+![image](https://github.com/user-attachments/assets/3e3186b0-aacd-4e67-bbed-5a42500199c1)
+
+
 ## 🛠 Troubleshooting
 
 | Problem                         | Solution                                           |
