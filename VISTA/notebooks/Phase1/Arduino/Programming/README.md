@@ -106,6 +106,10 @@ This pattern **repeats forever** inside `loop()`.
 
 9. The LED should now **blink every second**!
 
+<img width="654" alt="Screenshot 2025-05-23 at 3 16 30 AM" src="https://github.com/user-attachments/assets/0c13498b-b9a6-46ea-94cc-f041df9c1384" />
+
+
+
 ---
 
 ## 🔧 Common Troubleshooting
