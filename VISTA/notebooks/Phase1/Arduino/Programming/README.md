@@ -1,3 +1,7 @@
+# Goal
+
+Arduino project by making an LED blink. You'll learn about the key functions that control Arduino programs and how to debug issues using the Serial Monitor. Additionally, you will explore different methods to restart your program, both in hardware and software. 
+
 # 🚀 Arduino Project: Blink the Onboard LED
 
 This README will walk you through creating your **first real Arduino program** that makes the onboard LED blink! It’s a simple and fun project, perfect for beginners.
