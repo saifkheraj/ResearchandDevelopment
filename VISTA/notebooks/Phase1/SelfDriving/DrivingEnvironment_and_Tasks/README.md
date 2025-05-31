@@ -2,15 +2,6 @@
 
 Welcome to the first module of the *Introduction to Self-Driving Cars* course. This module gives a foundational overview of the main components required to design and build a self-driving car, including core terminology, the driving task, and the taxonomy of autonomy levels.
 
----
-
-## 🧠 What You Will Learn in Module 1
-
-1. **Key terminology and definitions** in autonomous vehicle systems
-2. **The driving task** and its sub-tasks
-3. **Operational Design Domain (ODD)** and why it matters
-4. **Levels of driving automation**, from Level 0 to Level 5
-5. **Limitations of current classification systems**
 
 ---
 
