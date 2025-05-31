@@ -1,13 +1,12 @@
 # 📍 Perception in Autonomous Driving
 
-Welcome to Lesson 2!
 This document explains how autonomous vehicles perceive the world around them — a crucial foundation for making safe and intelligent driving decisions.
 
 ---
 
 ## 🧠 What is Perception?
 
-Perception is the task of understanding the environment and how the ego-vehicle is moving within it.
+Perception is the task of understanding the environment and how the ego vehicle is moving within it.
 
 ### Core Functions of Perception:
 
@@ -41,6 +40,27 @@ graph TD
 | Off-Road Elements | Curbs, barriers                 |
 | Road Obstructions | Cones, construction markers     |
 
+
+### Road Layout
+![image](https://github.com/user-attachments/assets/03645e3e-6e21-4a06-97be-6a5dc1744c6f)
+
+### Traffic Signals
+![image](https://github.com/user-attachments/assets/208292f6-53b1-4d69-981b-5329ffade6d7)
+
+### Road Signs
+
+![image](https://github.com/user-attachments/assets/9d3329a8-cd94-41d2-88f1-d47e60ecdc41)
+
+
+### Off-Road Elements
+![image](https://github.com/user-attachments/assets/11372364-0e01-47c5-8c5b-c4b59ba022fb)
+
+### Road Obstruction
+
+![image](https://github.com/user-attachments/assets/824c84c4-714b-4772-abe1-d6b5adc87bfe)
+
+
+
 ### 2. **Identify Dynamic Elements**
 
 | Type               | Examples            | Challenge Level |
@@ -49,13 +69,21 @@ graph TD
 | Two-Wheelers       | Bikes, motorcycles  | High            |
 | Pedestrians        | Walking individuals | Very High       |
 
-> 🧠 **Note**: Human motion is much more unpredictable than vehicle motion.
+> 🧠 **Note**: Human motion is much more unpredictable than vehicle motion. Dynamic objects are more of moving objects like trucks, pedestrians.
+
+### Vehicles (different types)
+![image](https://github.com/user-attachments/assets/026754d2-51ce-489e-9220-4bd0135a8f0f)
+
+### Pedestrians 
+![image](https://github.com/user-attachments/assets/ce3fda23-4c74-4a6e-ab72-37533c04008e)
+
 
 ---
 
 ### 3. **Ego Localization**
 
-Understanding where *you* (the car) are and how you're moving:
+ - Understanding where *you* (the car) are and how you're moving:
+ - Includes Position, Velocity, Acceleration, Orientation and angular motion
 
 **Data Sources**:
 
@@ -98,6 +126,16 @@ flowchart LR
 ---
 
 ## 📷 Sensor Redundancy is Key
+- Robust detection and segmentation
+- Sensor Uncertainty
+- Occlusion and Reflection
+ ![image](https://github.com/user-attachments/assets/0c230464-9b2d-4e38-9c6d-f83e48c8b63d)
+- Illumination and lens fare
+  ![image](https://github.com/user-attachments/assets/b5c113a7-fa06-4503-b649-2106540b86a0)
+- Weather and precipitation
+  ![image](https://github.com/user-attachments/assets/97a53d0d-5efb-4ebe-bb46-574fafe464d5)
+
+
 
 | Sensor  | Strengths                      | Weaknesses                       |
 | ------- | ------------------------------ | -------------------------------- |
@@ -121,18 +159,7 @@ flowchart LR
 
 ---
 
-## 📜 Coming Up Next
-
-In the next lesson, we’ll dive into **Decision Making** for autonomous vehicles — using perception to answer:
 
 > “What should the car do next?”
 
----
 
-## 🖼️ Suggested Visuals to Add (for presentation or project)
-
-* Diagram of vehicle surrounded by LIDAR, radar, and cameras
-* Side-by-side image of a camera vs LIDAR output
-* Table comparing pedestrian vs vehicle movement patterns
-* Animation showing a car predicting a pedestrian’s trajectory
-* Flowchart showing sensor fusion pipeline
