@@ -42,9 +42,11 @@ graph TD
 
 
 ### Road Layout
+
 ![image](https://github.com/user-attachments/assets/03645e3e-6e21-4a06-97be-6a5dc1744c6f)
 
 ### Traffic Signals
+
 ![image](https://github.com/user-attachments/assets/208292f6-53b1-4d69-981b-5329ffade6d7)
 
 ### Road Signs
@@ -53,6 +55,7 @@ graph TD
 
 
 ### Off-Road Elements
+
 ![image](https://github.com/user-attachments/assets/11372364-0e01-47c5-8c5b-c4b59ba022fb)
 
 ### Road Obstruction
@@ -72,9 +75,11 @@ graph TD
 > 🧠 **Note**: Human motion is much more unpredictable than vehicle motion. Dynamic objects are more of moving objects like trucks, pedestrians.
 
 ### Vehicles (different types)
+
 ![image](https://github.com/user-attachments/assets/026754d2-51ce-489e-9220-4bd0135a8f0f)
 
 ### Pedestrians 
+
 ![image](https://github.com/user-attachments/assets/ce3fda23-4c74-4a6e-ab72-37533c04008e)
 
 
@@ -112,29 +117,28 @@ flowchart LR
 
    * Rain, fog, snow distort sensor readings.
    * Sudden lighting changes or lens flares.
+  
+   ![image](https://github.com/user-attachments/assets/97a53d0d-5efb-4ebe-bb46-574fafe464d5)
+
 
 3. **Occlusion and Reflections**
 
    * Blocked line of sight.
    * Reflective surfaces confuse detection systems.
+   *  ![image](https://github.com/user-attachments/assets/0c230464-9b2d-4e38-9c6d-f83e48c8b63d)
 
 4. **Data Limitations**
 
    * Training data needed for diverse weather, objects, and environments.
    * Annotation is expensive and slow.
+  
+5. **Illumination and lens fare**
+   
+  ![image](https://github.com/user-attachments/assets/b5c113a7-fa06-4503-b649-2106540b86a0)
 
 ---
 
 ## 📷 Sensor Redundancy is Key
-- Robust detection and segmentation
-- Sensor Uncertainty
-- Occlusion and Reflection
- ![image](https://github.com/user-attachments/assets/0c230464-9b2d-4e38-9c6d-f83e48c8b63d)
-- Illumination and lens fare
-  ![image](https://github.com/user-attachments/assets/b5c113a7-fa06-4503-b649-2106540b86a0)
-- Weather and precipitation
-  ![image](https://github.com/user-attachments/assets/97a53d0d-5efb-4ebe-bb46-574fafe464d5)
-
 
 
 | Sensor  | Strengths                      | Weaknesses                       |
