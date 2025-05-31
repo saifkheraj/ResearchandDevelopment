@@ -168,144 +168,113 @@ flowchart LR
 
 
 ![image](https://github.com/user-attachments/assets/f490965f-62a0-4bfc-b9f9-b5ef58d270b3)
+# 🚗 Decision-Making in Autonomous Driving
 
-
-# 🎓 Decision-Making in Autonomous Driving
-
-we explore how self-driving systems **make decisions**, building upon the **perception** layer discussed earlier. Decision-making is part of the broader task of **planning**, which also includes controlling the vehicle to follow through on those decisions.
+Welcome to Lesson 3!
+This document explores how self-driving cars make decisions. Decision-making is part of **planning**, which comes after **perception** and before **execution**.
 
 ---
 
-## 🔄 Driving Task Pipeline
+## 🧠 Driving Task Pipeline
 
-```mermaid
-graph LR
-    A[Perception] --> B[Planning]
-    B --> C[Execution]
-    subgraph Planning Levels
-    B1[Mission Planning (Long-term)]
-    B2[Behavioral Planning (Short-term)]
-    B3[Motion Planning (Immediate)]
-    end
+```
+Perception → Planning → Execution
 ```
 
----
+Within **Planning**, we break decisions into three layers:
 
-## 🌍 Types of Planning
-
-### 1. **Mission Planning (Long-Term)**
-
-* 🗺 Plan full route from A to B
-* Example: "Drive from Home to Work"
-* Output: Global path and major turns
-
-### 2. **Behavioral Planning (Short-Term)**
-
-* ✈️ Make decisions like lane changes, turns
-* Example: "Should I enter the left lane now?"
-* Influences: Traffic signals, intersections, nearby vehicles
-
-### 3. **Motion Planning (Immediate)**
-
-* ⛵ Execute decisions with smooth, safe control
-* Example: "How much should I brake right now?"
-* Output: Trajectory (speed, steering angle)
+* **Mission Planning** (long-term)
+* **Behavioral Planning** (short-term)
+* **Motion Planning** (immediate)
 
 ---
 
-## 🚗 Example: Left Turn at an Intersection
+## 🧭 Types of Planning
 
-| Planning Stage | Example Decisions                                      |
-| -------------- | ------------------------------------------------------ |
-| Long-Term      | Turn left at upcoming intersection                     |
-| Short-Term     | Change to left-turn lane, slow down, stop at stop line |
-| Immediate      | Brake gently, steer accurately, yield to oncoming cars |
+### 1. Mission Planning (Long-Term)
 
-> Even for a **simple left turn**, dozens of planning decisions need to be evaluated and updated in real time.
+* Global decisions like: *“How do I get from point A to B?”*
+* Example: Drive from New York to Los Angeles
 
----
+### 2. Behavioral Planning (Short-Term)
 
-## ⚖️ Decision Complexity
+* Tactical decisions like: *“Should I turn left here?”*
+* Example: Change lanes, prepare for a turn
 
-### Factors That Increase Complexity:
+### 3. Motion Planning (Immediate)
 
-* Other vehicles cutting in
-* Missing lane markings
-* Pedestrians crossing suddenly
-* Vehicle behind you pressuring your pace
-* Multiple agents behaving unpredictably
-
-Result:
-
-> “A simple maneuver becomes a multi-layered planning problem.”
+* Real-time control: *“How much to turn the wheel?”*
+* Example: Follow the curve, brake gently
 
 ---
 
-## 🤖 Approaches to Decision-Making
+## 🚦 Example: Left Turn at an Intersection
 
-### ⚡ Reactive Planning
+Let’s walk through a left-turn scenario:
 
-* Based on **current state only**
-* Uses **rules** like:
+* **Mission Level**: Turn left to get home
+* **Behavioral Level**: Move to left-turn lane, slow down
+* **Motion Level**: Stop smoothly, steer accurately
 
-  * "If pedestrian detected, stop."
-  * "If speed limit drops, slow down."
-
-**Pros**: Fast and simple
-**Cons**: Doesn't handle future prediction
-
-### 📈 Predictive Planning
-
-* Uses **trajectory predictions** of other agents
-* Rules include:
-
-  * "Car ahead stopped for 10 sec, it might remain stopped."
-  * "Pedestrian will enter my lane in 3 sec. Slow down."
-
-**Pros**: More human-like, handles complex scenarios
-**Cons**: Requires accurate prediction, depends on robust perception
+> Even a basic turn involves many quick, layered decisions
 
 ---
 
-## 🔄 Summary
+## 🔄 Types of Planning Logic
 
-* Driving involves **multi-horizon planning**:
+### Reactive Planning
 
-  * Mission (long-term)
-  * Behavioral (short-term)
-  * Motion (immediate)
+* Responds to *current* conditions only
+* Example: “If red light, then stop”
 
-* We explored:
+Pros:
 
-  * Planning layers using a left turn example
-  * Two major decision-making approaches:
+* Fast and simple
 
-    * Reactive (now)
-    * Predictive (now + future)
+Cons:
 
-* Planning must adapt constantly as new data arrives
-
-* Even simple scenarios require real-time updates and layered control
+* Cannot handle future predictions
 
 ---
 
-## 🏙️ What’s Next?
+### Predictive Planning
 
-In the next module, we will look at the **hardware and software architecture** of self-driving cars.
+* Forecasts what *will* happen
+* Example: “That car has been stopped for 10 seconds. It’s probably staying stopped.”
 
-You will learn about the sensors, compute units, and software stacks that allow perception, planning, and execution to happen in real time.
+Pros:
 
-Stay tuned!
+* Human-like, context-aware
+
+Cons:
+
+* Complex, depends on accurate predictions
+
+---
+
+## 🔁 Challenges in Decision-Making
+
+* Unpredictable pedestrians or cyclists
+* Incomplete lane markings or signs
+* Weather and lighting conditions
+* Vehicles behaving erratically
+
+> Self-driving cars must continuously update their plans as new data arrives
 
 ---
 
-## 🖼️ Suggested Visuals to Add
+## ✅ Summary
 
-* Planning pyramid with mission, behavioral, motion layers
-* Intersection scenario: left-turn sequence with annotations
-* Side-by-side of reactive vs predictive logic trees
-* Timeline showing decisions at each planning window (long → short → immediate)
-* Simulation: vehicle braking for jaywalker with predictive trajectory
+* Planning includes long-term, short-term, and immediate decisions
+* Real-world driving involves many variables and uncertainties
+* Reactive and predictive planning serve different use cases
 
 ---
+
+## 📚 Next Steps
+
+In the next module, we’ll cover:
+
+* Self-driving **hardware** (sensors, compute units)
+* Software stack that powers perception, planning, and control
 
