@@ -1,3 +1,238 @@
+# 🚘 Introduction to Self-Driving Cars - Module 1
+
+Welcome to the first module of the *Introduction to Self-Driving Cars* course. This module gives a foundational overview of the main components required to design and build a self-driving car, including core terminology, the driving task, and the taxonomy of autonomy levels.
+
+---
+
+## 🧠 What You Will Learn in Module 1
+
+1. **Key terminology and definitions** in autonomous vehicle systems
+2. **The driving task** and its sub-tasks
+3. **Operational Design Domain (ODD)** and why it matters
+4. **Levels of driving automation**, from Level 0 to Level 5
+5. **Limitations of current classification systems**
+
+---
+
+## 🚗 The Driving Task
+
+Driving a vehicle autonomously requires managing three key sub-tasks:
+
+### 1. **Perception**
+
+* Understanding the environment
+* Detecting and tracking objects (cars, pedestrians, road signs)
+* Estimating ego-motion and predicting other agents' trajectories
+* **Example**: Detecting a stop sign and estimating the motion of a cyclist
+
+### 2. **Motion Planning**
+
+* Making driving decisions such as:
+
+  * Route planning
+  * Lane changes
+  * Maneuvers like overtaking or swerving around potholes
+* **Example**: Planning to switch lanes ahead of a slow-moving truck
+
+### 3. **Vehicle Control**
+
+* Executing planned decisions via:
+
+  * Steering
+  * Braking
+  * Accelerating
+* **Example**: Applying brakes smoothly when a pedestrian steps into the road
+
+These tasks are executed **continuously and interactively** during driving.
+
+---
+
+## 🌍 Operational Design Domain (ODD)
+
+**ODD** defines the specific conditions under which a self-driving system can safely operate:
+
+| Category           | Examples                      |
+| ------------------ | ----------------------------- |
+| Environment        | Urban, rural, highway         |
+| Weather            | Clear, rain, snow             |
+| Time of Day        | Day, night                    |
+| Road Type          | One-way, multi-lane, unmarked |
+| Traffic Conditions | Light, dense                  |
+
+**Example**: A system may only work in sunny daytime on urban roads with clear markings.
+
+---
+
+## 📊 SAE Levels of Driving Automation (J3016)
+
+A taxonomy developed by the Society of Automotive Engineers (SAE) outlines **six levels of driving automation**:
+
+# 📊 SAE Levels of Driving Automation: Detailed Guide
+
+This document provides a detailed breakdown of the SAE J3016 standard defining **six levels of driving automation**, including specific functions, real-world examples, and system behavior in various scenarios.
+
+---
+
+## 🚗 Level 0 – No Automation
+
+**Who drives?**: The human driver performs all tasks at all times.
+**System role**: No driving automation; may provide alerts or warnings.
+
+### Features:
+
+* Emergency braking assist
+* Blind-spot warnings
+
+### Real-World Example:
+
+* A standard car with **parking sensors** or a **lane departure warning** that does not take control.
+
+---
+
+## 🛣️ Level 1 – Driver Assistance
+
+**Who drives?**: Human driver remains fully engaged.
+**System role**: Can assist **either** steering (lateral) **or** speed/braking (longitudinal), but not both.
+
+### Features:
+
+* **Adaptive Cruise Control (ACC)**: Maintains speed and distance
+* **Lane Keeping Assist (LKA)**: Helps keep car in lane
+
+### Real-World Example:
+
+* Honda Civic with ACC: The driver steers, but the car manages speed to keep safe distance.
+
+---
+
+## 🚙 Level 2 – Partial Automation
+
+**Who drives?**: Human driver is responsible for monitoring and reacting at all times.
+**System role**: Simultaneously performs **both** lateral and longitudinal control under specific conditions.
+
+### Features:
+
+* **Steering + acceleration/braking** together
+* No need to touch pedals/steering temporarily
+
+### Real-World Example:
+
+* **Tesla Autopilot** or **GM Super Cruise**: Car steers and maintains speed on highway, but the driver must remain alert and keep hands on wheel.
+
+---
+
+## 🚘 Level 3 – Conditional Automation
+
+**Who drives?**: System drives **within limited scenarios**, but human must take over **on request**.
+**System role**: Full control, **including object and event detection**, under specific conditions (ODD).
+
+### Features:
+
+* Car can operate without human attention in certain situations (e.g., traffic jams)
+* System must be able to detect its limitations and request handoff
+
+### Real-World Example:
+
+* **Audi A8 Traffic Jam Pilot**: Drives autonomously in heavy traffic at low speeds on highways, but requires human readiness to take over when conditions change.
+
+---
+
+## 🚐 Level 4 – High Automation
+
+**Who drives?**: The system drives **within its ODD**. Human backup is **not required** within that domain.
+**System role**: Full automation including emergencies. Can bring vehicle to a safe stop if needed.
+
+### Features:
+
+* Can operate driver-free within mapped areas or scenarios
+* Handles emergency maneuvers and fallback
+
+### Real-World Example:
+
+* **Waymo One**: Driverless taxis in Phoenix, Arizona operating in geo-fenced areas without safety drivers
+
+---
+
+## 🚖 Level 5 – Full Automation
+
+**Who drives?**: No human involvement **at any time**.
+**System role**: Can drive under **all conditions** and handle **all scenarios**—rain, snow, city traffic, rural roads.
+
+### Features:
+
+* No steering wheel, pedals, or need for a driver
+* True door-to-door autonomous experience
+
+### Real-World Example:
+
+* **Concept vehicles** and **prototypes** only. No production-level Level 5 cars exist yet.
+
+---
+
+## 🧾 Summary Comparison Table
+
+| Level | Who Drives?            | Tasks Automated               | OEDR Capability | Example Scenario                      |
+| ----- | ---------------------- | ----------------------------- | --------------- | ------------------------------------- |
+| 0     | Human                  | None                          | ❌               | Regular car with parking sensors      |
+| 1     | Human                  | One (lateral or longitudinal) | ❌               | Lane Keep Assist or ACC               |
+| 2     | Human (monitoring)     | Both control axes             | ❌               | Tesla Autopilot, GM Super Cruise      |
+| 3     | System (conditionally) | All driving + OEDR            | ✅ (limited)     | Audi A8 Traffic Jam Pilot             |
+| 4     | System (within ODD)    | All tasks + fallback          | ✅               | Waymo One taxi within geo-fenced zone |
+| 5     | System                 | All tasks, all environments   | ✅               | Future driverless vehicles (anywhere) |
+
+---
+
+## ⚠️ Notes and Caveats
+
+* **Level 3 is controversial**: Difficult for humans to regain control safely after disengagement
+* **ODD = Operational Design Domain**: Describes conditions (weather, geography, traffic) under which a system can operate safely
+* **Level 5 remains theoretical**: It requires robust general AI and full safety validation in extreme edge cases
+
+---
+
+## 🧭 Key Takeaways
+
+* **SAE Levels reflect driver involvement and system capability**
+* Each step up reduces driver responsibility and increases system intelligence
+* The industry is currently between **Level 2 and Level 4** for most real-world deployments
+* **ODD and fallback behavior** are crucial for understanding what the system can actually handle
+
+---
+
+
+
+---
+
+## 🧪 Driving Task Decomposition
+
+| Function             | Description                                | Example                                   |
+| -------------------- | ------------------------------------------ | ----------------------------------------- |
+| Lateral Control      | Steering and direction                     | Staying centered in a curved highway lane |
+| Longitudinal Control | Acceleration and braking                   | Slowing down for a red light              |
+| OEDR                 | Detecting and responding to objects/events | Stopping for a pedestrian at crosswalk    |
+| Planning             | Route and behavior planning                | Choosing a detour during road closure     |
+| Human-like Tasks     | Signaling and social interaction           | Flashing headlights to yield right of way |
+
+---
+
+## ⚠️ Limitations of the Taxonomy
+
+* SAE levels provide **coarse classifications**
+* Two Level 4 vehicles may differ vastly in capabilities due to ODD
+* A deeper, context-specific capability matrix may be more informative
+
+---
+
+## ✅ Summary
+
+* Driving involves **Perception**, **Planning**, and **Control**
+* Systems must operate within a defined **Operational Design Domain (ODD)**
+* SAE's six levels define automation from **Level 0** (no automation) to **Level 5** (full automation)
+* Real-world examples help ground these definitions in practice
+
+
+
+---
 
 
 # 📍 Perception in Autonomous Driving
