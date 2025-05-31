@@ -212,20 +212,32 @@ Within **Planning**, we break decisions into three layers:
 
 Let’s walk through a left-turn scenario:
 
-* **Mission Level**: Turn left to get home
-* **Behavioral Level**: Move to left-turn lane, slow down
+* **Mission Level (Long Term)**: Turn left to get home
+
+![image](https://github.com/user-attachments/assets/f069965f-07cb-4821-82b9-228cf69c30a6)
+
+
+* **Behavioral Level (Short Term)**: Move to left-turn lane, slow down (involves lane change, stopping at signals, padestrian etc). 
+
+![image](https://github.com/user-attachments/assets/39ef7f5a-2ed7-4a20-8b3b-40e3b5a0191f)
+
+  
 * **Motion Level**: Stop smoothly, steer accurately
 
 > Even a basic turn involves many quick, layered decisions
+
+![image](https://github.com/user-attachments/assets/4236db2c-8c74-4e82-8928-d656ee1910cc)
+
 
 ---
 
 ## 🔄 Types of Planning Logic
 
-### Reactive Planning
+### Reactive Planning (Rule based reactive Planning) --> takes into account rules and not future predictions
 
 * Responds to *current* conditions only
 * Example: “If red light, then stop”
+* Example: If the speed limit changes, adjust speed to match it.
 
 Pros:
 
@@ -240,7 +252,8 @@ Cons:
 ### Predictive Planning
 
 * Forecasts what *will* happen
-* Example: “That car has been stopped for 10 seconds. It’s probably staying stopped.”
+* Example: “That car has been stopped for 10 seconds. It’s probably staying stopped for next 10 seconds.”
+* Example: Pedestrian is jaywalking. She will enter our lane by the time we reach her.
 
 Pros:
 
