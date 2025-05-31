@@ -168,3 +168,144 @@ flowchart LR
 
 
 ![image](https://github.com/user-attachments/assets/f490965f-62a0-4bfc-b9f9-b5ef58d270b3)
+
+
+# 🎓 Decision-Making in Autonomous Driving
+
+we explore how self-driving systems **make decisions**, building upon the **perception** layer discussed earlier. Decision-making is part of the broader task of **planning**, which also includes controlling the vehicle to follow through on those decisions.
+
+---
+
+## 🔄 Driving Task Pipeline
+
+```mermaid
+graph LR
+    A[Perception] --> B[Planning]
+    B --> C[Execution]
+    subgraph Planning Levels
+    B1[Mission Planning (Long-term)]
+    B2[Behavioral Planning (Short-term)]
+    B3[Motion Planning (Immediate)]
+    end
+```
+
+---
+
+## 🌍 Types of Planning
+
+### 1. **Mission Planning (Long-Term)**
+
+* 🗺 Plan full route from A to B
+* Example: "Drive from Home to Work"
+* Output: Global path and major turns
+
+### 2. **Behavioral Planning (Short-Term)**
+
+* ✈️ Make decisions like lane changes, turns
+* Example: "Should I enter the left lane now?"
+* Influences: Traffic signals, intersections, nearby vehicles
+
+### 3. **Motion Planning (Immediate)**
+
+* ⛵ Execute decisions with smooth, safe control
+* Example: "How much should I brake right now?"
+* Output: Trajectory (speed, steering angle)
+
+---
+
+## 🚗 Example: Left Turn at an Intersection
+
+| Planning Stage | Example Decisions                                      |
+| -------------- | ------------------------------------------------------ |
+| Long-Term      | Turn left at upcoming intersection                     |
+| Short-Term     | Change to left-turn lane, slow down, stop at stop line |
+| Immediate      | Brake gently, steer accurately, yield to oncoming cars |
+
+> Even for a **simple left turn**, dozens of planning decisions need to be evaluated and updated in real time.
+
+---
+
+## ⚖️ Decision Complexity
+
+### Factors That Increase Complexity:
+
+* Other vehicles cutting in
+* Missing lane markings
+* Pedestrians crossing suddenly
+* Vehicle behind you pressuring your pace
+* Multiple agents behaving unpredictably
+
+Result:
+
+> “A simple maneuver becomes a multi-layered planning problem.”
+
+---
+
+## 🤖 Approaches to Decision-Making
+
+### ⚡ Reactive Planning
+
+* Based on **current state only**
+* Uses **rules** like:
+
+  * "If pedestrian detected, stop."
+  * "If speed limit drops, slow down."
+
+**Pros**: Fast and simple
+**Cons**: Doesn't handle future prediction
+
+### 📈 Predictive Planning
+
+* Uses **trajectory predictions** of other agents
+* Rules include:
+
+  * "Car ahead stopped for 10 sec, it might remain stopped."
+  * "Pedestrian will enter my lane in 3 sec. Slow down."
+
+**Pros**: More human-like, handles complex scenarios
+**Cons**: Requires accurate prediction, depends on robust perception
+
+---
+
+## 🔄 Summary
+
+* Driving involves **multi-horizon planning**:
+
+  * Mission (long-term)
+  * Behavioral (short-term)
+  * Motion (immediate)
+
+* We explored:
+
+  * Planning layers using a left turn example
+  * Two major decision-making approaches:
+
+    * Reactive (now)
+    * Predictive (now + future)
+
+* Planning must adapt constantly as new data arrives
+
+* Even simple scenarios require real-time updates and layered control
+
+---
+
+## 🏙️ What’s Next?
+
+In the next module, we will look at the **hardware and software architecture** of self-driving cars.
+
+You will learn about the sensors, compute units, and software stacks that allow perception, planning, and execution to happen in real time.
+
+Stay tuned!
+
+---
+
+## 🖼️ Suggested Visuals to Add
+
+* Planning pyramid with mission, behavioral, motion layers
+* Intersection scenario: left-turn sequence with annotations
+* Side-by-side of reactive vs predictive logic trees
+* Timeline showing decisions at each planning window (long → short → immediate)
+* Simulation: vehicle braking for jaywalker with predictive trajectory
+
+---
+
