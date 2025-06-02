@@ -1,6 +1,6 @@
 # 🚘 Introduction to Self-Driving Cars - Module 1
 
-Welcome to the first module of the *Introduction to Self-Driving Cars* course. This module gives a foundational overview of the main components required to design and build a self-driving car, including core terminology, the driving task, and the taxonomy of autonomy levels.
+We will talk about foundational overview of the main components required to design and build a self-driving car, including core terminology, the driving task, and the taxonomy of autonomy levels.
 
 
 ---
