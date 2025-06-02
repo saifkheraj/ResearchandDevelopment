@@ -1,6 +1,7 @@
 // NutritionGoalsScreen.js
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const goals = [
   {
@@ -30,61 +31,77 @@ const goals = [
   },
 ];
 
-export default function NutritionGoalsScreen({ navigation }) {
+export default function NutritionGoalsScreen() {
+  const navigation = useNavigation();
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>What's your nutrition goal?</Text>
-      {goals.map((goal, index) => (
-        <TouchableOpacity
-          key={index}
-          style={styles.card}
-          onPress={() => navigation.navigate('NextScreen', { goal: goal.title })}
-        >
-          <Text style={styles.emoji}>{goal.emoji}</Text>
-          <View>
-            <Text style={styles.title}>{goal.title}</Text>
-            <Text style={styles.desc}>{goal.desc}</Text>
-          </View>
-        </TouchableOpacity>
-      ))}
-    </ScrollView>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text style={styles.heading}>What's your nutrition goal?</Text>
+        {goals.map((goal, index) => (
+          <TouchableOpacity
+            key={index}
+            style={styles.card}
+            onPress={() => navigation.navigate('MealPlan', { goal })}
+          >
+            <Text style={styles.emoji}>{goal.emoji}</Text>
+            <View style={styles.textContainer}>
+              <Text style={styles.title}>{goal.title}</Text>
+              <Text style={styles.desc}>{goal.desc}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#f9f9f9',
+  },
   container: {
-    padding: 20,
-    backgroundColor: '#fff',
+    padding: 24,
+    backgroundColor: '#f9f9f9',
   },
   heading: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    fontSize: 28,
+    fontWeight: '700',
+    marginBottom: 28,
+    color: '#000',
+    textAlign: 'center',
   },
   card: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f8f9fa',
-    padding: 15,
-    marginBottom: 15,
-    borderRadius: 10,
+    backgroundColor: '#fff',
+    padding: 20,
+    marginBottom: 20,
+    borderRadius: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 5,
-    elevation: 2,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 4,
+    borderWidth: 1,
+    borderColor: '#eee',
   },
   emoji: {
-    fontSize: 26,
-    marginRight: 15,
+    fontSize: 30,
+    marginRight: 16,
+  },
+  textContainer: {
+    flex: 1,
   },
   title: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
+    color: '#111',
   },
   desc: {
     fontSize: 14,
-    color: '#555',
+    color: '#666',
     marginTop: 4,
   },
 });
