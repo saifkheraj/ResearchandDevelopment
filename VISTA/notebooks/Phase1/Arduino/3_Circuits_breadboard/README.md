@@ -38,6 +38,9 @@ Let's look at how a breadboard connects wires and components. You will see this 
 * **Red line** = for **Power**
 * **Blue line** = for **Ground**
 
+<img width="714" alt="Screenshot 2025-06-05 at 2 30 41 AM" src="https://github.com/user-attachments/assets/9f8a8d44-3308-49b6-96f2-34eeff9c9348" />
+
+
 ### 2. **Terminal Strips (Middle Area)**
 
 * Holes in each **vertical column of 5** are connected
