@@ -117,7 +117,13 @@ No LiDAR approach
 
 ### 🌐 LiDAR - 3D Laser Scanning
 
-**What it does**: Shoots light beams and measures time-of-flight to create 3D point clouds
+![image](https://github.com/user-attachments/assets/0e0fcb14-e010-46f6-9253-7c2837255968)
+
+![image](https://github.com/user-attachments/assets/2482b7e2-54e9-4231-b326-0d26174dd5b8)
+
+
+
+**What it does**: Shoots light beams and measures time-of-flight to create 3D point clouds. An emitter sends short pulses of laser light through the air at 186,000 miles per second. Lidar provides essential data for the safe navigation of self-driving vehicles. By creating 3D maps of the area surrounding the vehicle, lidar collects precise information about the shape, size and location of objects, making it possible to detect road signs, other cars, obstacles, and pedestrians. Lidar’s accuracy at a distance also enables autonomous vehicles to track lanes and helps prevent collisions.
 
 #### Key Performance Metrics:
 
@@ -180,6 +186,9 @@ No LiDAR approach
 
 ### 📡 RADAR - Radio Detection and Ranging
 
+![image](https://github.com/user-attachments/assets/c44ab4c8-2996-4b63-8719-19cf16246f69)
+
+
 **How it works**: Radio waves detect objects and measure distance/velocity
 
 #### Key Advantages:
@@ -220,7 +229,10 @@ No LiDAR approach
 
 ### 🔊 Ultrasonic/Sonar - Short Range Precision
 
-**What they do**: Use sound waves for close-proximity detection
+![image](https://github.com/user-attachments/assets/0ce3fb8f-58f3-46d1-8339-5c819205d6bc)
+
+
+**What they do**: Use sound waves for close-proximity detection. Ideal for low cost parking solution. cheap and not impacted by weather conditions
 
 #### Key Characteristics:
 - **Range**: 0.1-8 meters maximum
@@ -250,6 +262,9 @@ No LiDAR approach
 ## 🚗 Proprioceptive Sensors (Vehicle State)
 
 ### 🛰️ GNSS/GPS - Global Positioning
+
+![image](https://github.com/user-attachments/assets/9cb3e49b-9ad5-4e6b-b179-e58321fd04b6)
+
 
 **What it does**: Determines vehicle location using satellite signals
 
@@ -308,6 +323,9 @@ No LiDAR approach
 
 ### 🛞 Wheel Odometry - Distance and Speed
 
+![image](https://github.com/user-attachments/assets/e9b04ccb-e565-48d2-a884-14c3f4d5bc07)
+
+
 **How it works**: Tracks wheel rotation to estimate vehicle motion
 
 #### Measurements Provided:
@@ -335,6 +353,11 @@ No LiDAR approach
 
 ---
 
+![image](https://github.com/user-attachments/assets/d21de1cd-465f-4562-b18f-5f6971cb7e11)
+
+![image](https://github.com/user-attachments/assets/b6b1a5d0-496f-4c2d-9332-8290d941b085)
+
+
 ## 💻 Computing Hardware - The Brain
 
 ### Core Requirements:
@@ -354,6 +377,8 @@ No LiDAR approach
 ### 🏢 Industry Computing Solutions
 
 #### **🎮 NVIDIA DRIVE Platform**
+![image](https://github.com/user-attachments/assets/949ae851-90c2-43a8-81c4-9d3f25ad2dc4)
+
 
 **DRIVE Orin (Current Generation)**:
 - **Performance**: 254 TOPS (Trillion Operations Per Second)
