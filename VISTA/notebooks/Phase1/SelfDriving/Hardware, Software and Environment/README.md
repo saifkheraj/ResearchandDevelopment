@@ -2,6 +2,9 @@
 
 ## 🏗️ Five-Module Architecture
 
+![image](https://github.com/user-attachments/assets/44c6a12e-8a40-4698-a8a4-892f99c4543c)
+
+
 All major AV companies use this modular approach with different implementations:
 
 ```
