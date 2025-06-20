@@ -15,6 +15,9 @@ All major AV companies use this modular approach with different implementations:
 
 **Purpose:** Know where you are and what's around you
 
+![image](https://github.com/user-attachments/assets/b035611b-3e90-4e1c-8362-7d03c0e927aa)
+
+
 ### 1.1 Localization - "Where am I?"
 
 **Inputs:**
@@ -66,7 +69,17 @@ All major AV companies use this modular approach with different implementations:
 
 **Purpose:** Create maps for navigation and safety
 
+<img width="697" alt="Screenshot 2025-06-20 at 5 08 44 PM" src="https://github.com/user-attachments/assets/2de50bc2-3f28-4b7d-a5cf-cc2325f4ae57" />
+
+
+
+
+
+
 ### 2.1 Occupancy Grid - "What spaces are blocked?"
+
+<img width="387" alt="Screenshot 2025-06-20 at 5 08 07 PM" src="https://github.com/user-attachments/assets/d99a9e00-8be7-4f0d-aec7-0a1cbdb60e7f" />
+
 
 **Inputs:**
 - **Filtered LiDAR data** - Static obstacles only (buildings, barriers, parked cars)
@@ -81,6 +94,9 @@ All major AV companies use this modular approach with different implementations:
 
 ### 2.2 Localization Map - "Reference points for positioning"
 
+<img width="409" alt="Screenshot 2025-06-20 at 5 08 20 PM" src="https://github.com/user-attachments/assets/ba1e2b29-b321-4618-b39d-db6901d1c507" />
+
+
 **Inputs:**
 - **HD LiDAR scans** - Permanent landmarks (buildings, signs, poles)
 - **Camera features** - Visual markers for recognition
@@ -91,6 +107,8 @@ All major AV companies use this modular approach with different implementations:
 - **Tesla**: Crowdsourced mapping from customer fleet
 
 ### 2.3 Road Map - "Driving rules and lane info"
+
+<img width="367" alt="Screenshot 2025-06-20 at 5 08 31 PM" src="https://github.com/user-attachments/assets/1164d88e-18ee-4a3c-b902-819c5d0f5771" />
 
 **Inputs:**
 - **HD map database** - Professional road surveys
@@ -105,7 +123,13 @@ All major AV companies use this modular approach with different implementations:
 
 **Purpose:** Decide where to go and how to get there
 
+<img width="659" alt="Screenshot 2025-06-20 at 5 10 14 PM" src="https://github.com/user-attachments/assets/2a25846f-d296-4974-8db1-471c49c14a93" />
+
+
 ### 3.1 Mission Planning - "Route from A to B"
+
+<img width="544" alt="Screenshot 2025-06-20 at 5 10 27 PM" src="https://github.com/user-attachments/assets/773f8a5a-c512-4639-962e-52e916aaa154" />
+
 
 **Inputs:**
 - **Current location** - GPS coordinates
@@ -119,6 +143,9 @@ All major AV companies use this modular approach with different implementations:
 - **Mercedes**: Autobahn route planning with charging stations
 
 ### 3.2 Behavior Planning - "What maneuver to make"
+
+<img width="575" alt="Screenshot 2025-06-20 at 5 10 40 PM" src="https://github.com/user-attachments/assets/a872fa0a-549d-4925-9a64-57c7a23c19a5" />
+
 
 **Inputs:**
 - **Planned route** - From mission planner
@@ -138,6 +165,9 @@ All major AV companies use this modular approach with different implementations:
 
 ### 3.3 Local Planning - "Exact path and speed"
 
+<img width="371" alt="Screenshot 2025-06-20 at 5 10 55 PM" src="https://github.com/user-attachments/assets/6f8c4264-1485-4479-8a73-188afeb18b7d" />
+
+
 **Inputs:**
 - **Behavior command** - "Change lanes" or "Stop for red light"
 - **Obstacle map** - Free space around vehicle
@@ -149,6 +179,9 @@ All major AV companies use this modular approach with different implementations:
 ## 📦 Module 4: Vehicle Control
 
 **Purpose:** Execute the planned path
+
+![image](https://github.com/user-attachments/assets/82a055f5-a380-47f8-bded-95d2ad7ad4fe)
+
 
 ### 4.1 Steering Control
 
@@ -181,6 +214,9 @@ All major AV companies use this modular approach with different implementations:
 ## 📦 Module 5: System Supervisor
 
 **Purpose:** Monitor everything and ensure safety
+
+![image](https://github.com/user-attachments/assets/f2a68f99-f29d-4034-be47-c148f4aed74e)
+
 
 ### 5.1 Hardware Monitoring
 
