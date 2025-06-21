@@ -436,15 +436,13 @@ The National Highway Transportation Safety Administration (NHTSA) has defined a 
 # Industry Safety Perspectives & Testing Methodologies
 ## Complete Guide to Autonomous Vehicle Safety Assessment
 
-## 📚 Course Introduction
 
-Welcome to the deep dive into how industry leaders approach autonomous vehicle safety. This module examines real-world safety strategies from Waymo and GM, compares analytical versus empirical testing approaches, and reveals the staggering statistics behind proving AV safety. You'll learn why demonstrating autonomous vehicles are safer than humans requires billions of miles of testing and decades of validation.
+This examines real-world safety strategies from Waymo and GM, compares analytical versus empirical testing approaches, and reveals the staggering statistics behind proving AV safety. You'll learn why demonstrating autonomous vehicles are safer than humans requires billions of miles of testing and decades of validation.
 
 **Critical Reality**: To statistically prove autonomous vehicles are safer than human drivers for fatalities, we need **8 billion miles** of testing - equivalent to 400 years with 100 vehicles running 24/7.
 
-## 🎯 Learning Objectives
+## 🎯 Objectives
 
-By the end of this module, you will understand:
 1. **Industry safety strategies** from Waymo and GM
 2. **Testing methodologies** across simulation, closed-course, and real-world
 3. **Analytical vs empirical** safety assessment approaches
@@ -481,6 +479,9 @@ By the end of this module, you will understand:
 
 ### **🔧 Waymo's Safety Development Process**
 
+![image](https://github.com/user-attachments/assets/5948cd58-457b-4d2d-a4db-4075dbfc2ddc)
+
+
 #### **Phase 1: Hazard Identification**
 - **Systematic scenario analysis**: Identify all possible failure modes
 - **Mitigation strategy development**: Plan responses to each hazard
@@ -497,6 +498,9 @@ By the end of this module, you will understand:
 - **Real-world**: Multi-city street testing
 
 ### **📊 Waymo Testing Methodology Breakdown**
+
+They do millions of scenarios to ensure it is safe.
+![image](https://github.com/user-attachments/assets/7fa3fc41-809d-4657-b4e2-c31f5b5d9b46)
 
 | Testing Type | Volume | Focus | Benefits | Limitations |
 |--------------|--------|-------|----------|-------------|
