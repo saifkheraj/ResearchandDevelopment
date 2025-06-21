@@ -81,24 +81,6 @@ By the end of this module, you will understand:
 | **Emergency Backup** | Volvo system disabled | 1.3 seconds before | Never disable safety systems |
 | **Human Fallback** | Inattentive safety driver | Final 1.3 seconds | Better training, elimination |
 
-### Critical Case Study 3: GM Cruise Motorcycle Incident (2017)
-
-**What Happened**: A GM Cruise Chevy Bolt knocked over a motorcyclist after it aborted a lane change maneuver. The motorcyclist who was lane splitting moved forward beside the Bolt and blocked the return maneuver.
-
-**Dilemma Situation**: Vehicle faced impossible choice between hitting motorcycle or multiple cars
-
-**Industry Evolution**:
-- **Cruise 2025**: Now uses prediction models for motorcycle behavior
-- **Tesla**: Neural networks trained on lane-splitting scenarios
-- **Mercedes**: Avoids complex scenarios entirely with conservative ODD
-
-### Critical Case Study 4: Uber Rollover (2017)
-
-**What Happened**: An Uber self-driving vehicle overreacted during a minor collision caused by another vehicle and ended up overturning. The controller had likely not been tested for such a scenario and overreacted.
-
-**Root Cause**: Dynamic models of the vehicle don't assume significant disturbance forces from other vehicles acting on the car.
-
-**Lesson**: Robust control systems must handle unexpected disturbances
 
 ### 📊 **Lessons Learned: Before vs After**
 
