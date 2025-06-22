@@ -21,7 +21,7 @@ This guide covers real-world AV failures, safety frameworks, industry implementa
 
 ### Critical Case Study: Uber Fatality (March 2018)
 
-**The Tragedy**: Elaine Herzberg, 49, while crossing unmarked area in Tempe, Arizona.
+**The Tragedy**: Elaine Herzberg, 49, killed while crossing unmarked area in Tempe, Arizona.
 
 #### Multiple System Failures Analysis
 
@@ -288,6 +288,176 @@ Simulation Testing (Base - Massive Scale)
 | **Injury Rate** | < Human (1 per 2.1M km) | ✅ Achieved | ✅ Achieved | 🔄 In Progress | Industry Success |
 | **Collision Rate** | < Human (1 per 400K km) | ✅ Achieved | ✅ Achieved | ✅ Achieved | Industry Success |
 | **Fatality Rate** | < Human (1 per 146M km) | 🔄 Validating | 🔄 Validating | 🔄 Validating | Statistical Challenge |
+
+---
+
+## 🛠️ Safety Assessment Frameworks
+
+### Generic Analytical Frameworks
+
+#### Fault Tree Analysis (FTA) - Top-Down Approach
+
+**Concept**: Start with system failure, identify all possible causes
+
+```
+Car Crash (Root Event)
+├── Software Failure
+│   ├── Perception Code Malfunction
+│   └── Cybersecurity Problem (Hacked)
+└── Hardware Failure
+    ├── Manufacturing Defects
+    └── Material Imperfections
+```
+
+| Component | Description | Example |
+|-----------|-------------|---------|
+| **Root Event** | System failure to avoid | Car crash |
+| **Logic Gates** | Intermediate failure causes | Software OR Hardware failure |
+| **Leaf Nodes** | Specific failure rates with probabilities | Perception failure: 0.001/hour |
+
+**Probability Calculation**: Use Boolean logic (AND = product, OR = sum for independent events)
+
+#### FMEA (Failure Modes & Effects Analysis) - Bottom-Up Approach
+
+**Concept**: Start with component failures, analyze all possible effects
+
+**FMEA Process Steps**:
+
+| Step | Action | Output |
+|------|--------|--------|
+| **1. Identify** | List all system processes and failure modes | Component failure list |
+| **2. Assess Severity** | Rate consequences (1-10, 10=most severe) | Severity score |
+| **3. Assess Occurrence** | Rate frequency (1-10, 10=most frequent) | Occurrence score |
+| **4. Assess Detection** | Rate detection likelihood (1-10, 10=impossible to detect) | Detection score |
+| **5. Calculate RPN** | Risk Priority Number = Severity × Occurrence × Detection | Priority ranking |
+
+**FMEA Example: Gravel Patch Scenario**
+
+| Failure Mode | Effect | Severity | Occurrence | Detection | RPN | Priority |
+|--------------|--------|----------|------------|-----------|-----|----------|
+| **Gravel patch** | Physical crash | 10 | 4 | 10 | 400 | 1st |
+| **GPS sync failure** | Navigation error | 6 | 5 | 10 | 300 | 2nd |
+| **Motion prediction** | Poor planning | 5 | 3 | 10 | 150 | 3rd |
+| **Sign perception** | Missed traffic sign | 8 | 2 | 6 | 96 | 4th |
+
+#### HAZOP (Hazard & Operability Study) - Qualitative Brainstorming
+
+**Purpose**: Early-stage qualitative risk identification using guide words
+
+| Guide Word | Application | Example Failure Mode |
+|------------|-------------|----------------------|
+| **Not** | Function doesn't occur | Brakes not applied |
+| **More** | Excessive function | Over-steering |
+| **Less** | Insufficient function | Under-braking |
+| **Early** | Function occurs too soon | Premature lane change |
+| **Late** | Function occurs too late | Delayed emergency stop |
+
+### Automotive-Specific Safety Frameworks
+
+#### Functional Safety (FUSA) - ISO 26262
+
+**Definition**: Absence of unreasonable risk from hardware/software malfunctions
+
+**ASIL Levels** (Automotive Safety Integrity Levels):
+
+| ASIL Level | Risk Level | Requirements | Example Systems |
+|------------|------------|--------------|-----------------|
+| **ASIL D** | Highest | Most stringent development | Airbag control, brake systems |
+| **ASIL C** | High | Rigorous testing | Engine management |
+| **ASIL B** | Medium | Standard automotive | Anti-lock braking |
+| **ASIL A** | Low | Basic requirements | Interior lighting |
+
+**Functional Safety V-Model Process**:
+
+```
+Requirements → Hazard Analysis → Implementation
+     ↓              ↓               ↓
+Specification → Risk Assessment → Low-level Code
+     ↓              ↓               ↓
+System Design → Safety Goals → Unit Testing
+     ↑              ↑               ↑
+Validation ← Integration Testing ← Verification
+     ↑              ↑               ↑
+Assessment ← System Testing ← Component Testing
+```
+
+#### HARA (Hazard Analysis & Risk Assessment) Process
+
+| Step | Description | Output |
+|------|-------------|--------|
+| **1. Identify Hazards** | Hardware/software faults affecting safety | Hazard list |
+| **2. Define Scenarios** | Operational situations from ODD | Scenario list |
+| **3. Combine into Events** | Hazard + Situation = Hazardous Event | Event matrix |
+| **4. Assess Risk** | Calculate numerical risk values | Risk scores |
+| **5. Select Worst-Case** | Choose highest risk scenarios | Priority events |
+| **6. Define Requirements** | Safety goals based on worst-case | Safety requirements |
+
+#### SOTIF (Safety of Intended Functionality) - ISO/PAS 21448
+
+**Focus**: Performance limitations and predictable misuse (beyond hardware/software failures)
+
+**SOTIF Scope**:
+
+| Area | Examples | Current Coverage |
+|------|----------|-----------------|
+| **Performance Limitations** | Sensor noise, algorithm limits, actuator constraints | Levels 0-2 (can extend to 3-5) |
+| **Predictable Misuse** | User confusion, overconfidence, overload | User behavior analysis |
+| **Technology Insufficiencies** | Object detection failures, environmental limits | Algorithm validation |
+
+**SOTIF vs FUSA Comparison**:
+
+| Aspect | Functional Safety (FUSA) | SOTIF |
+|--------|-------------------------|--------|
+| **Focus** | Hardware/software malfunctions | Performance limitations & misuse |
+| **Failure Types** | Random failures, systematic errors | Insufficient performance, user error |
+| **Standards** | ISO 26262 | ISO/PAS 21448 |
+| **Automation Levels** | All levels | Currently 0-2, extending to 3-5 |
+| **Relationship** | Foundation standard | Extension of FUSA |
+
+### Framework Application in Industry
+
+#### Industry Usage Matrix
+
+| Framework | Waymo | GM | Tesla | Mercedes | Primary Use Case |
+|-----------|-------|----|----|---------|------------------|
+| **Fault Tree Analysis** | ✅ | ✅ | ✅ | ✅ | System-level failure analysis |
+| **FMEA** | ✅ | ✅ | ✅ | ✅ | Component failure prioritization |
+| **HAZOP** | ✅ | ✅ | Partial | ✅ | Early-stage risk brainstorming |
+| **ISO 26262 (FUSA)** | ✅ | ✅ | ✅ | ✅ | Hardware/software safety |
+| **SOTIF** | ✅ | ✅ | Developing | ✅ | Performance & misuse assessment |
+
+#### Integrated Safety Assessment Flow
+
+```mermaid
+graph TD
+    A[System Requirements] --> B[HAZOP Brainstorming]
+    B --> C[Fault Tree Analysis]
+    B --> D[FMEA Analysis]
+    C --> E[HARA Process]
+    D --> E
+    E --> F[ISO 26262 FUSA]
+    E --> G[ISO 21448 SOTIF]
+    F --> H[V-Model Development]
+    G --> H
+    H --> I[Validation & Verification]
+    I --> J[Safety Assessment]
+    J --> K{Acceptable Risk?}
+    K -->|No| L[Design Improvements]
+    K -->|Yes| M[System Deployment]
+    L --> A
+```
+
+### Quick Reference: Framework Selection Guide
+
+| Situation | Recommended Framework | Reason |
+|-----------|----------------------|---------|
+| **Early design phase** | HAZOP | Qualitative brainstorming |
+| **Known failure modes** | FMEA | Bottom-up risk prioritization |
+| **System-level analysis** | Fault Tree Analysis | Top-down failure analysis |
+| **Hardware/software safety** | ISO 26262 (FUSA) | Industry standard |
+| **AI/ML performance issues** | SOTIF | Performance limitation focus |
+| **Regulatory compliance** | ISO 26262 + SOTIF | Complete coverage |
+| **Continuous improvement** | All frameworks | Comprehensive assessment |
 
 ---
 
