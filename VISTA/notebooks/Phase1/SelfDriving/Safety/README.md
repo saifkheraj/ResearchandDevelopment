@@ -315,7 +315,7 @@ Car Crash (Root Event)
 | **Logic Gates** | Intermediate failure causes | Software OR Hardware failure |
 | **Leaf Nodes** | Specific failure rates with probabilities | Perception failure: 0.001/hour |
 
-**Probability Calculation**: Use Boolean logic (AND = product, OR = sum for independent events)
+**Probability Calculation**: Use Boolean logic (AND = product, OR = sum for independent events) --> in leaf nodes.
 
 #### FMEA (Failure Modes & Effects Analysis) - Bottom-Up Approach
 
@@ -342,7 +342,7 @@ Car Crash (Root Event)
 
 #### HAZOP (Hazard & Operability Study) - Qualitative Brainstorming
 
-**Purpose**: Early-stage qualitative risk identification using guide words
+**Purpose**: Early-stage qualitative risk identification using guide words . It is a qualitative brainstorming process.
 
 | Guide Word | Application | Example Failure Mode |
 |------------|-------------|----------------------|
@@ -380,6 +380,8 @@ Validation ← Integration Testing ← Verification
      ↑              ↑               ↑
 Assessment ← System Testing ← Component Testing
 ```
+
+![image](https://github.com/user-attachments/assets/07ca3702-2d31-4e4b-8de0-48983e1e0ab4)
 
 #### HARA (Hazard Analysis & Risk Assessment) Process
 
