@@ -530,6 +530,18 @@ graph TD
 
 **Current Status**: Industry has demonstrated collision and injury rate improvements; fatality rate improvement still being statistically validated through massive testing programs.
 
+
+**Statistical proof by road testing is impractical due to the rarity of serious crashes.**
+
+Developers must combine:
+
+- Simulation
+- Accelerated testing
+- Scenario-based testing
+- Virtual validation
+- Adaptive regulations are needed to match evolving AV technology.
+
+Pilot programs with public-private collaboration can help manage uncertainty and liability.
 ---
 
 *This guide synthesizes real-world incident analysis, regulatory frameworks, industry implementations, and statistical validation challenges to provide a comprehensive understanding of autonomous vehicle safety systems in 2025.*
