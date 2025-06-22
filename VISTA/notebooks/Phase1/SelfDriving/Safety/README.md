@@ -479,8 +479,7 @@ This examines real-world safety strategies from Waymo and GM, compares analytica
 
 ### **🔧 Waymo's Safety Development Process**
 
-![image](https://github.com/user-attachments/assets/5948cd58-457b-4d2d-a4db-4075dbfc2ddc)
-
+They do lot of scenario analysis.
 
 #### **Phase 1: Hazard Identification**
 - **Systematic scenario analysis**: Identify all possible failure modes
