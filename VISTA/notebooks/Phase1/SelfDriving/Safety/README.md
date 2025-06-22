@@ -504,8 +504,8 @@ They do millions of scenarios to ensure it is safe.
 | Testing Type | Volume | Focus | Benefits | Limitations |
 |--------------|--------|-------|----------|-------------|
 | **Simulation** | 10M+ miles/day | Edge case discovery | Infinite scenarios, cost-effective | May miss real-world complexity |
-| **Closed-Course** | 47 scenarios | Safety validation | Controlled conditions, repeatable | Limited scenario diversity |
-| **Real-World** | 563K km (2017) | Experience gathering | Real conditions, public confidence | Unpredictable, expensive |
+| **Closed-Course** | 47 scenarios | Safety validation | Controlled conditions, repeatable (rear end, intersection, road departure, lanechange | Limited scenario diversity |
+| **Real-World** | 563K km (2017) | Experience gathering | Real conditions, public confidence (accross streets) | Unpredictable, expensive |
 
 ### **🎯 Core Accident Prevention Focus**
 
