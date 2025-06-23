@@ -4,7 +4,7 @@
 
 This guide covers real-world AV failures, safety frameworks, industry implementations, and testing methodologies. Learn how companies approach autonomous vehicle safety and the massive statistical challenges involved.
 
-**Critical Reality**: Proving AVs are safer than humans for fatalities requires **8 billion miles** of testing - equivalent to 400 years with 100 vehicles running 24/7.
+**Critical Reality**: Proving AVs are safer than humans for fatalities requires **8 billion miles** of testing - equivalent to 400 years with 100 vehicles running 24/7. 
 
 ---
 
