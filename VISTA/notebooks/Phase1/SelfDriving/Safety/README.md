@@ -542,6 +542,184 @@ Developers must combine:
 - Adaptive regulations are needed to match evolving AV technology.
 
 Pilot programs with public-private collaboration can help manage uncertainty and liability.
+
+# Summary
+
+Risk is s
+
+- Perception, Planning, and Control are the most important components in a self-driving car. They work together as follows:
+- Perception: "What is around me?"
+- Planning: "What should I do next?"
+- Control: "How do I move safely and accurately?"
+- NHTSA safety framework is not mandatory to follow. (it is suggestion)
+  
+- # Actions to Perform After an Accident - Autonomous Vehicle
+
+| Action                                    | Description                                                                                   |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Bring vehicle to a safe stop              | Safely stop the vehicle to prevent further danger                                             |
+| Activate hazard lights                    | Signal to other drivers that the vehicle is in emergency mode                                 |
+| Notify emergency services                 | Automatically contact local emergency services (e.g., 911) with location and accident details |
+| Record sensor data                        | Save camera, LiDAR, radar, and telemetry data for post-incident investigation                 |
+| Inform remote monitoring center (if used) | Notify human operators supervising the AV                                                     |
+| Alert vehicle occupants (if any)          | Inform passengers about the incident and next steps                                           |
+| Display warning to surrounding traffic    | Use visual or audible signals to warn other drivers and pedestrians                           |
+
+---
+
+**Optional / Advanced Actions:**
+
+| Action                                | Description                                     |
+| ------------------------------------- | ----------------------------------------------- |
+| Automatically update HD maps          | If road conditions changed, update mapping data |
+| Communicate with other vehicles (V2V) | Send alerts to other nearby connected vehicles  |
+
+---
+
+These actions help ensure **safety**, **legal compliance**, and **investigation readiness** after an accident.
+
+For deeper references:
+
+* ISO 26262 standards
+* SAE Levels of Driving Automation
+* NHTSA AV Policy Guidelines
+
+
+- Testing Time for Human-Level Fatality Rate
+
+**Target:** 8.8 billion miles (95% Confidence, Rand Corp)
+
+**Fleet:** 100 vehicles @ 25 mph, 24/7
+
+**Result:**
+
+```
+~402 years required
+```
+
+**Reason:** Pure road testing is impractical → use simulation + formal methods.
+
+
+### Example Fault Tree Analysis for Autonomous Vehicle
+
+**Goal:** Compute probability of *Autonomous Vehicle Failure* using a simple fault tree (OR nodes, independent events)
+
+---
+
+### Fault Tree Structure:
+
+```
+Autonomous Vehicle Failure (P = ?)
+├── Sensor Failure (P = 0.06)
+│   ├── LiDAR Failure (P = 0.03)
+│   ├── Camera Failure (P = 0.02)
+│   └── Radar Failure (P = 0.01)
+├── Software Failure (P = 0.04)
+│   ├── Algorithm Bug (P = 0.03)
+│   └── Hacking (P = 0.01)
+└── Human Interaction Failure (P = 0.05)
+    ├── Driver Confusion (P = 0.03)
+    └── Wrong Voice Command (P = 0.02)
+```
+
+---
+
+### Calculation:
+
+For OR nodes (assuming independence):
+
+```
+Sensor Failure P = 0.03 + 0.02 + 0.01 = 0.06
+Software Failure P = 0.03 + 0.01 = 0.04
+Human Interaction Failure P = 0.03 + 0.02 = 0.05
+```
+
+Top Node (Autonomous Vehicle Failure) is also OR:
+
+```
+P_total = 0.06 + 0.04 + 0.05 = 0.15
+```
+
+---
+
+### Result:
+
+**P(Autonomous Vehicle Failure) = 0.15** (15%)
+
+---
+
+### Notes:
+
+* This is a simplified example.
+* Real systems use AND/OR logic, conditional dependencies, minimal cut sets.
+* Probabilistic Fault Trees help visualize how failures propagate.
+
+---
+
+### References:
+
+* NHTSA Fault Tree Analysis Guidelines
+* ISO 26262: Functional Safety for Road Vehicles
+* Rand Corporation: AV Risk Modeling
+
+
+# FMEA RPN Example - Computer Vision Failure
+
+**Scenario:**
+Computer vision algorithm failure reduces sensing ability but is partly mitigated by LiDAR and radar.
+
+---
+
+**How Scores Are Assigned:**
+
+| Factor            | Score | Reason                                                       |
+| ----------------- | ----- | ------------------------------------------------------------ |
+| Severity (S)      | 5     | Somewhat severe — reduces sensing but not a full system loss |
+| Occurrence (O)    | 4     | Could happen regularly in low-light conditions               |
+| Detectability (D) | 3     | Fairly detectable in most cases                              |
+
+---
+
+**Risk Priority Number (RPN):**
+
+```
+RPN = S × O × D = 5 × 4 × 3 = 60
+```
+
+**Meaning:**
+
+* RPN of **60** indicates a moderate risk needing monitoring.
+* RPN helps prioritize issues during design reviews and testing.
+
+**Formula:**
+
+```
+RPN = Severity × Occurrence × Detectability
+```
+
+---
+
+**FMEA Scale (Common Industry Practice):**
+
+| Factor            | Scale                                         |
+| ----------------- | --------------------------------------------- |
+| Severity (S)      | 1 = No effect, 10 = Hazardous without warning |
+| Occurrence (O)    | 1 = Remote, 10 = Very high/frequent           |
+| Detectability (D) | 1 = Easily detected, 10 = Undetectable        |
+
+---
+
+**Purpose:**
+
+* FMEA and RPN help prioritize which failures to address first.
+* The higher the RPN → the more attention required (design, process, testing).
+
+
+- The ISO 26262 standard defines functional safety terms and activities for electrical and electronic systems within motor vehicles, 
+
+
 ---
 
 *This guide synthesizes real-world incident analysis, regulatory frameworks, industry implementations, and statistical validation challenges to provide a comprehensive understanding of autonomous vehicle safety systems in 2025.*
+
+
