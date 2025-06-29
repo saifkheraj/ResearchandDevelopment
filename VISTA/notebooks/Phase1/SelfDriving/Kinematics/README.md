@@ -159,13 +159,18 @@ vᵣ = r · ωᵣ    (right wheel linear speed)
 
 🟢 This tells how fast the **wheel is pushing the robot forward**.
 
+Linear velocity is the speed of the car (or robot) moving forward in a straight line. When people say “velocity,” they’re talking about linear velocity — the speed at which something moves forward.
+
 ### Step 3: Compute Robot's Motion
 
-#### a. Forward Velocity `v` of the robot (center point):
+#### a. Forward Velocity `v` of the robot (center point) - forward velocity of a two-wheeled robot is the average of the left and right wheel speeds.:
 ```
 v = (vᵣ + vₗ) / 2
 ```
 This is how fast the robot is going **straight ahead** (on average).
+
+- when vr and vl is same, it moves in same direction
+- If the wheel velocities are different, the robot moves in a curved path about some instantaneous center of rotation or ICR.
 
 #### b. Angular Velocity `ω` of the robot:
 ```
@@ -175,6 +180,12 @@ This is how fast the robot is going **straight ahead** (on average).
 Where:
 - **L** = distance between the two wheels (wheelbase width)
 - **ω** = how fast the robot is **turning** (left/right)
+- If l is the distance from the center of the robot to one wheel, → then the total wheelbase is 2𝑙
+If 𝐿 is the distance from left wheel to right wheel,→ then 𝐿 = 2𝑙
+- vr = r.wr and vl=r.wl
+- If both wheels move at the same speed, then vr = vl then w = 0 (no turning)
+
+
 
 ## 🎯 Turning Logic
 
