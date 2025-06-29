@@ -282,56 +282,68 @@ omega_robot = (v_right - v_left) / L  # -0.5 rad/s (turning right)
 
 ## ✅ General Formulas
 
-* $R = \frac{L}{2} \cdot \frac{v_r + v_l}{v_r - v_l}$
-* $\omega = \frac{v_r - v_l}{L}$
 
-## 🔄 Turning Radius \( R \) in Differential Drive Robots
+## 🔄 Turning Radius $R$ in Differential Drive Robots
 
-The **turning radius \( R \)** tells us how sharply the robot is turning — it's the distance from the robot’s center to the **Instantaneous Center of Rotation (ICR)**.
+The **turning radius $R$** tells us how sharply the robot is turning — it's the distance from the robot’s center to the **Instantaneous Center of Rotation (ICR)**.
 
 ---
 
-### 📐 Formula:
+### 📀 Formula:
 
-\[
+$$
 R = \frac{L}{2} \cdot \frac{v_r + v_l}{v_r - v_l}
-\]
+$$
 
 Where:
-- \( R \): Turning radius (meters)
-- \( L \): Distance between the two wheels (wheelbase)
-- \( v_r \): Right wheel’s linear speed (m/s)
-- \( v_l \): Left wheel’s linear speed (m/s)
+
+* $R$: Turning radius (meters)
+* $L$: Distance between the two wheels (wheelbase)
+* $v_r$: Right wheel’s linear speed (m/s)
+* $v_l$: Left wheel’s linear speed (m/s)
 
 ---
 
 ### 🧠 Intuition:
 
-| Wheel Speeds       | Turning Radius \( R \)         | What It Means                   |
-|--------------------|-------------------------------|----------------------------------|
-| \( v_r = v_l \)     | \( R = \infty \)                | Straight line motion             |
-| \( v_r > v_l \)     | \( R > 0 \) (positive, left turn) | Robot turns left                 |
-| \( v_r < v_l \)     | \( R < 0 \) (negative, right turn) | Robot turns right                |
-| \( v_r = -v_l \)    | \( R = 0 \)                     | Spins in place                   |
+| Wheel Speeds | Turning Radius $R$             | What It Means        |
+| ------------ | ------------------------------ | -------------------- |
+| $v_r = v_l$  | $R = \infty$                   | Straight line motion |
+| $v_r > v_l$  | $R > 0$ (positive, left turn)  | Robot turns left     |
+| $v_r < v_l$  | $R < 0$ (negative, right turn) | Robot turns right    |
+| $v_r = -v_l$ | $R = 0$                        | Spins in place       |
 
 ---
 
 ### 🔢 Example Calculation:
 
 Let:
-- \( v_r = 1.2 \, \text{m/s} \)
-- \( v_l = 0.8 \, \text{m/s} \)
-- \( L = 0.5 \, \text{m} \)
+
+* $v_r = 1.2 \, \text{m/s}$
+* $v_l = 0.8 \, \text{m/s}$
+* $L = 0.5 \, \text{m}$
 
 Then:
-\[
+
+$$
 R = \frac{0.5}{2} \cdot \frac{1.2 + 0.8}{1.2 - 0.8}
 = 0.25 \cdot \frac{2.0}{0.4}
 = 0.25 \cdot 5
 = 1.25 \, \text{meters}
-\]
+$$
 
 👉 The robot turns **left** in a circle with radius **1.25 meters**
+
+---
+
+### 💡 Summary:
+
+* **Smaller $R$** → tighter curve
+* **Larger $R$** → gentler curve
+* **$R = 0$** → spin in place
+* **$R = \infty$** → straight motion
+
+Use this formula to estimate how sharply your robot is turning during movement!
 
 ---
 
