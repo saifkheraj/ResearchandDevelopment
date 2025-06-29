@@ -185,6 +185,13 @@ If 𝐿 is the distance from left wheel to right wheel,→ then 𝐿 = 2𝑙
 - vr = r.wr and vl=r.wl
 - If both wheels move at the same speed, then vr = vl then w = 0 (no turning)
 
+| $\omega$ Value        | What Happens                     |
+| --------------------- | -------------------------------- |
+| $\omega = 0$          | No turning → robot goes straight |
+| $\omega = 0.5$ rad/s  | Gentle turn                      |
+| $\omega = 2.0$ rad/s  | Sharp, fast turn                 |
+| $\omega = -1.0$ rad/s | Turning right (clockwise)        |
+
 
 
 ## 🎯 Turning Logic
