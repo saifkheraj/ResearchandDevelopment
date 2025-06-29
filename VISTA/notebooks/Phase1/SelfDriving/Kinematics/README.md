@@ -113,8 +113,59 @@ So it moves:
 
 ---
 
-Stay tuned for:
+## 🔄 Wheel Kinematics: All Differential Drive Scenarios: Complete Guide
 
-* Kinematic Equation #2 (for displacement)
-* Motion graphs (position vs. time, velocity vs. time)
-* Real-life applications (robots, cars, projectiles)
+This document expands the wheel kinematics by listing **all possible robot motion scenarios** based on left and right wheel speeds, with corresponding formulas, motion types, and examples.
+
+---
+
+## 📚 Core Variables
+
+* $v_l$: Left wheel velocity
+* $v_r$: Right wheel velocity
+* $L$: Distance between wheels
+* $R$: Turning radius
+* $\omega$: Angular velocity (rotation rate)
+
+---
+
+## ✅ General Formulas
+
+* $R = \frac{L}{2} \cdot \frac{v_r + v_l}{v_r - v_l}$
+* $\omega = \frac{v_r - v_l}{L}$
+
+---
+
+## 🔁 All Scenarios Table
+
+| Case                        | $v_r$ | $v_l$ | $v_r - v_l$ | $R$   | $\omega$   | Motion Type          |
+| --------------------------- | ----- | ----- | ----------- | ----- | ---------- | -------------------- |
+| 1. Straight Line            | 2.0   | 2.0   | 0           | ∞     | 0          | Forward              |
+| 2. Slight Left Turn         | 2.0   | 1.9   | 0.1         | 5.0   | 0.33 / L   | Gentle curve left    |
+| 3. Medium Left Turn         | 2.0   | 1.0   | 1.0         | 0.45  | 3.33 / L   | Normal left curve    |
+| 4. Sharp Left (spin edge)   | 2.0   | 0.0   | 2.0         | 0.225 | 6.67 / L   | Tight left circle    |
+| 5. Spin in Place Left       | 2.0   | -2.0  | 4.0         | 0     | 13.33 / L  | Rotate left on spot  |
+| 6. Medium Right Turn        | 1.0   | 2.0   | -1.0        | 0.45  | -3.33 / L  | Normal right curve   |
+| 7. Sharp Right Turn         | 0.0   | 2.0   | -2.0        | 0.225 | -6.67 / L  | Tight right circle   |
+| 8. Spin in Place Right      | -2.0  | 2.0   | -4.0        | 0     | -13.33 / L | Rotate right on spot |
+| 9. Reverse Straight         | -2.0  | -2.0  | 0           | ∞     | 0          | Reverse straight     |
+| 10. Reverse Left Turn       | -1.0  | -2.0  | 1.0         | 0.45  | 3.33 / L   | Backward left curve  |
+| 11. Reverse Right Turn      | -2.0  | -1.0  | -1.0        | 0.45  | -3.33 / L  | Backward right curve |
+| 12. One Wheel Stopped Left  | 2.0   | 0.0   | 2.0         | 0.225 | 6.67 / L   | Pivot around left    |
+| 13. One Wheel Stopped Right | 0.0   | 2.0   | -2.0        | 0.225 | -6.67 / L  | Pivot around right   |
+
+**Assumptions for calculations**:
+
+* $L = 0.3$ m
+* Sample values show patterns; scale accordingly
+
+---
+
+## 🧠 Notes
+
+* $R = 0$ → Spins in place
+* Large $R$ → Gentle curves
+* $\omega > 0$: Counterclockwise (left)
+* $\omega < 0$: Clockwise (right)
+
+This table is a complete cheat sheet for analyzing and simulating two-wheel robot motion using only wheel speed values!
