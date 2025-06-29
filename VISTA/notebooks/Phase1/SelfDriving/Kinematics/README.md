@@ -282,7 +282,7 @@ omega_robot = (v_right - v_left) / L  # -0.5 rad/s (turning right)
 
 ## 🔁 All Scenarios Table
 
-| Case                        | $v_r$ | $v_l$ | $v_r - v_l$ | $R$   | $\omega$   | Motion Type          |
+| Case                        | $v_r$ | $v_l$ | $v_r - v_l$ | $R$   | $\omega$ (angular velocity of robot)  | Motion Type          |
 | --------------------------- | ----- | ----- | ----------- | ----- | ---------- | -------------------- |
 | 1. Straight Line            | 2.0   | 2.0   | 0           | ∞     | 0          | Forward              |
 | 2. Slight Left Turn         | 2.0   | 1.9   | 0.1         | 5.0   | 0.33 / L   | Gentle curve left    |
