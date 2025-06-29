@@ -117,7 +117,140 @@ So it moves:
 
 This document expands the wheel kinematics by listing **all possible robot motion scenarios** based on left and right wheel speeds, with corresponding formulas, motion types, and examples.
 
----
+## Two Wheel Kinematic Model
+![alt text](image.png)
+
+# Differential Drive Kinematics
+
+A comprehensive guide to understanding and implementing differential drive robot kinematics.
+
+## 📖 Overview
+
+Differential drive is a method of controlling a robot using two independently driven wheels. This README explains the mathematical foundations and practical implementation of converting wheel angular velocities to robot motion.
+
+## 🔧 Core Concepts
+
+### Two Types of Angular Velocity (ω)
+
+⚠️ **Important**: There are **two different kinds of ω** used in differential drive:
+
+| Symbol | Meaning | Units | Applies To | Formula Example |
+|--------|---------|-------|------------|-----------------|
+| ωᵢ | Angular velocity of **a wheel** | rad/s | Individual Wheel | vᵢ = r·ωᵢ |
+| ω | Angular velocity of **the robot** | rad/s | Whole Robot (turning) | ω = (vᵣ - vₗ)/L |
+
+## 🧮 Mathematical Derivation
+
+### Step 1: Start with Angular Velocity of Each Wheel
+
+- **ωₗ**: Angular velocity of **left** wheel (spin rate, rad/s)
+- **ωᵣ**: Angular velocity of **right** wheel (spin rate, rad/s)
+
+🟢 This is **how fast the wheels spin** — not how the robot turns.
+
+### Step 2: Convert to Linear Speed of Wheels
+
+Using the wheel radius `r`:
+
+```
+vₗ = r · ωₗ    (left wheel linear speed)
+vᵣ = r · ωᵣ    (right wheel linear speed)
+```
+
+🟢 This tells how fast the **wheel is pushing the robot forward**.
+
+### Step 3: Compute Robot's Motion
+
+#### a. Forward Velocity `v` of the robot (center point):
+```
+v = (vᵣ + vₗ) / 2
+```
+This is how fast the robot is going **straight ahead** (on average).
+
+#### b. Angular Velocity `ω` of the robot:
+```
+ω = (vᵣ - vₗ) / L
+```
+
+Where:
+- **L** = distance between the two wheels (wheelbase width)
+- **ω** = how fast the robot is **turning** (left/right)
+
+## 🎯 Turning Logic
+
+| Condition | Result | Description |
+|-----------|--------|-------------|
+| vᵣ = vₗ | **Straight motion** | 🟢 No turning |
+| vᵣ > vₗ | **Left turn** | 🟡 Right wheel faster |
+| vᵣ < vₗ | **Right turn** | 🔴 Left wheel faster |
+| vᵣ = -vₗ | **Spin in place** | 🔁 Wheels rotating opposite directions |
+
+## 🚗 Analogy
+
+Think of this like a car:
+- **Wheels spin** (ωᵢ) to move the car forward
+- **The car turns** (ω) when left/right wheels move at different speeds
+
+## 🔍 Detailed Breakdown
+
+### 1. **ωᵢ** — Wheel Angular Velocity
+- How fast a wheel is **spinning around its axle**
+- Think of it like a car tire rotating
+- `v = r·ωᵢ`: how fast that spin pushes the robot forward
+- ➡️ Used to calculate **forward movement** of each wheel
+
+### 2. **ω** — Robot's Angular Velocity (Turning Rate)
+- How fast the **robot is rotating** (like turning left or right)
+- Entire robot's turning speed around a point (the ICR - Instantaneous Center of Rotation)
+- `ω = (vᵣ - vₗ)/L`: difference in wheel speeds creates turning motion
+- ➡️ Used to calculate **turning motion** of robot's body
+
+## 🎓 Applications
+
+This kinematic model is fundamental for:
+
+- **Forward Kinematics**: Given wheel speeds → predict robot motion
+- **Inverse Kinematics**: Want robot motion → calculate needed wheel speeds  
+- **Odometry**: Track where robot has moved
+- **Path Planning**: Control robot to follow desired trajectories
+- **Navigation**: Real-time motion control and localization
+
+## 📊 Parameters
+
+| Variable | Description | Units |
+|----------|-------------|-------|
+| ωₗ, ωᵣ | Wheel angular velocities | rad/s |
+| vₗ, vᵣ | Wheel linear velocities | m/s |
+| v | Robot forward velocity | m/s |
+| ω | Robot angular velocity | rad/s |
+| r | Wheel radius | m |
+| L | Wheelbase (distance between wheels) | m |
+
+## 🚀 Quick Start
+
+```python
+# Example calculation
+r = 0.05        # wheel radius (5cm)
+L = 0.20        # wheelbase (20cm)
+omega_left = 10  # left wheel: 10 rad/s
+omega_right = 8  # right wheel: 8 rad/s
+
+# Calculate wheel speeds
+v_left = r * omega_left   # 0.5 m/s
+v_right = r * omega_right # 0.4 m/s
+
+# Calculate robot motion
+v_robot = (v_right + v_left) / 2      # 0.45 m/s forward
+omega_robot = (v_right - v_left) / L  # -0.5 rad/s (turning right)
+```
+
+## 📝 Notes
+
+- This model assumes no wheel slippage
+- Wheels are assumed to be rigid and maintain contact with the ground
+- The robot is assumed to be a rigid body
+- All motion occurs in a 2D plane
+
 
 ## 📚 Core Variables
 
