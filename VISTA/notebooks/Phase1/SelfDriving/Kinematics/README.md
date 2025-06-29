@@ -392,3 +392,102 @@ Use this formula to estimate how sharply your robot is turning during movement!
 * $\omega < 0$: Clockwise (right)
 
 This table is a complete cheat sheet for analyzing and simulating two-wheel robot motion using only wheel speed values!
+
+
+# Final Summary (Another way to express with angular velocity rather than linear velocity):
+
+# 🤖 Differential Drive Robot: Kinematic Model (Continuous Time)
+
+This document explains how a two-wheeled robot moves using a continuous time kinematic model.
+
+---
+
+## 🧮 Key Formulas
+
+### 1. Forward Linear Velocity (v)
+
+```
+      v = (r * w1 + r * w2) / 2
+```
+
+* Average of left and right wheel speeds (converted to linear form). same as what we discussed above but we discussed it in linear velocity way (r*wl is vl).
+
+### 2. Angular Velocity (omega)
+
+```
+      ω = (r * w1 - r * w2) / (2 * l)
+```
+
+* Tells how fast robot rotates (left/right). This is same (vr - vl)/L
+* If w1 = w2 → ω = 0 → straight motion
+
+### 3. Robot Motion in 2D
+
+```
+      dx/dt = v * cos(θ) = ((r * w1 + r * w2)/2) * cos(θ)
+      dy/dt = v * sin(θ) = ((r * w1 + r * w2)/2) * sin(θ)
+      dθ/dt = ω = (r * w1 - r * w2)/(2l)
+```
+
+* Describes position and heading change over time.
+
+---
+
+## 📐 ASCII Diagram
+
+```
+               ^ y
+               |
+               |
+               |        (theta)
+               |       ↗
+               |     ↗ robot path
+               |
+(origin) *-------------------------> x
+
+         ← w2                  w1 →
+      [O]========================[O]
+            |<---- 2l ---->|
+                   p (center)
+```
+
+---
+
+## 🧠 Interpretations
+
+| Wheel Speeds | Robot Behavior           | omega | Path Type     |
+| ------------ | ------------------------ | ----- | ------------- |
+| w1 = w2      | Goes straight            | 0     | Straight line |
+| w1 > w2      | Turns left               | >0    | Left circle   |
+| w1 < w2      | Turns right              | <0    | Right circle  |
+| w1 = -w2     | Spins in place           | High  | In-place spin |
+| w1 = 0       | Spins around right wheel | med   | Pivot left    |
+| w2 = 0       | Spins around left wheel  | med   | Pivot right   |
+
+---
+
+## 📌 Variables
+
+| Symbol | Meaning                          |
+| ------ | -------------------------------- |
+| r      | Wheel radius                     |
+| w1     | Angular velocity of right wheel  |
+| w2     | Angular velocity of left wheel   |
+| l      | Half the distance between wheels |
+| θ      | Orientation of robot             |
+| x, y   | Robot's position in world frame  |
+
+---
+
+## 💬 Summary
+
+The continuous time model helps describe how a differential drive robot moves based on:
+
+* **How fast the wheels spin** (w1, w2)
+* **The wheel radius** (r)
+* **The wheel separation** (2l)
+
+These equations let us simulate and control the robot's position and heading over time using just motor inputs!
+
+> Perfect for building your own robot navigation or controller system.
+
