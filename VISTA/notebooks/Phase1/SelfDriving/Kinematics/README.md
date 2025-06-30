@@ -491,3 +491,116 @@ These equations let us simulate and control the robot's position and heading ove
 
 > Perfect for building your own robot navigation or controller system.
 
+
+# Coordinate Frames
+
+![image](https://github.com/user-attachments/assets/ada2b320-15f4-4206-9b52-c7245f3be85a)
+
+
+![image](https://github.com/user-attachments/assets/c4c4e7fa-e60e-4e1e-8742-b22692363bf3)
+
+
+Coordinate frames are the foundation of how robots, cars, drones, and satellites understand **where things are**. They act like lenses or viewpoints through which positions, directions, and motions are described.
+
+---
+
+## 📍 What is a Coordinate Frame?
+
+A **coordinate frame** is simply a reference system with an origin and axes (X, Y, Z) that helps describe the position and orientation of objects in space.
+
+Imagine putting a camera at different places:
+
+* One on a car roof
+* One on the wall of a building
+* One on a satellite
+  Each of these views the world differently. These are **different frames**.
+
+---
+
+## 🧭 Main Coordinate Frames
+
+| Frame        | Fixed or Moving? | Attached To             | Used For                                     | Example                                            |
+| ------------ | ---------------- | ----------------------- | -------------------------------------------- | -------------------------------------------------- |
+| **Inertial** | ❌ Fixed          | Earth or background map | Global positioning, reference for all motion | GPS map, airport control tower                     |
+| **Body**     | ✅ Moving         | The vehicle's center    | Describes vehicle's motion                   | Car center, drone center, satellite body           |
+| **Sensor**   | ✅ Moving         | Specific sensor device  | Describes what sensor sees                   | Front camera, LIDAR on drone, antenna on satellite |
+
+---
+
+## 📌 Real-World Examples
+
+### 🚗 Self-Driving Car
+
+* **Inertial Frame**: Google Maps coordinate (East-North-Up)
+* **Body Frame**: Center of the car (rear axle)
+* **Sensor Frame**: Front camera or LIDAR
+
+> Car detects a stop sign 10m ahead (in camera frame)
+> It must translate that into global coordinates using body and inertial frames
+
+### 🛰 Satellite
+
+* **Inertial Frame**: Earth-Centered, Earth-Fixed (ECEF)
+* **Body Frame**: Center of satellite
+* **Sensor Frame**: Camera or antenna mounted on panel
+
+> Satellite needs to point its camera at a city on Earth. It must transform coordinates from its own rotating body to the fixed Earth frame.
+
+### 🚁 Helicopter
+
+* **Inertial Frame**: Ground or GPS frame
+* **Body Frame**: Center of gravity of helicopter
+* **Sensor Frame**: Infrared camera under the cockpit
+
+> A surveillance camera detects a vehicle. To follow it, the pilot needs to convert camera frame → helicopter frame → Earth frame.
+
+### 🚀 Flying Car (Autonomous Drone-Car Hybrid)
+
+* **Inertial Frame**: Fixed ground map
+* **Body Frame**: Center of the drone-car
+* **Sensor Frame**: Underbelly LIDAR for landing
+
+> During landing, the LIDAR detects a flat surface. To land safely, the vehicle must calculate where that surface is in global coordinates.
+
+---
+
+## 🔁 Why Do We Need Multiple Frames?
+
+Because sensors are not always in the center, and the vehicle is always moving!
+
+### Scenario:
+
+```
+                [ Front Camera ]
+                     |
+        <--  Car Body Frame  -->
+                     |
+               [ Rear Wheels ]
+```
+
+* A pedestrian is detected by the front camera (sensor frame)
+* But the controller needs to plan braking using the car's center (body frame)
+* And show the location on the map (inertial frame)
+
+So we must convert:
+
+```
+Sensor Frame ➡ Body Frame ➡ Inertial Frame
+```
+
+---
+
+## 🧠 What to Remember
+
+* **Inertial frame** = Fixed world view (e.g., Earth, map)
+* **Body frame** = Attached to the moving robot/vehicle
+* **Sensor frame** = Attached to each device (camera, radar, GPS)
+* You must **transform** positions and velocities between frames to make sense of the world
+
+---
+
+Would you like to explore how these transformations happen using **rotation matrices** or **homogeneous coordinates** (later with visuals and no math yet)?
+
+Also ready to move to the **Bicycle Model** or 3D transformations if you're interested!
+
+
