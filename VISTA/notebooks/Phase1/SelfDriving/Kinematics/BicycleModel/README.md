@@ -294,3 +294,195 @@ This is used when:
 * You're building a simulator for a car or mobile robot
 * You want to track its position and rotation based on speed and steering
 * You need something simple but realistic enough to work in real life
+
+
+
+# 🚗 Front Axle Bicycle Model – README (For 12th Grade Students)
+
+![image](https://github.com/user-attachments/assets/fd4820ee-6bb3-40e0-b310-083233a3cec4)
+
+
+This document explains the **Front Axle Bicycle Model** — where the motion of a car or robot is tracked using the **center of the front axle**. It focuses on how the vehicle moves and rotates based on the **steering direction**.
+
+---
+
+## 📌 What's Different About the Front Axle Model?
+
+In earlier models, we tracked motion from the **rear axle**. Now we’re focusing on the **front axle**, where the **steering actually happens**. This means:
+
+* The direction of movement includes both the robot’s heading $\theta$ **and** the **steering angle** $\delta$.
+
+This affects how we calculate x and y velocity.
+
+---
+
+## 🧠 Key Variables
+
+| Symbol       | Meaning                                                   |
+| ------------ | --------------------------------------------------------- |
+| $(x_f, y_f)$ | Position of the front axle center                         |
+| $v$          | Forward speed (along the direction the wheel is pointing) |
+| $\theta$     | Heading direction of the vehicle                          |
+| $\delta$     | Steering angle of the front wheel                         |
+| $L$          | Wheelbase (distance between axles)                        |
+
+---
+
+## 📐 Kinematic Equations (Front Axle Reference)
+
+### 1. **Position Updates**
+
+Because the wheel is angled, the motion is along:
+$\theta + \delta$
+
+So, break the motion into x and y components:
+
+$\dot{x}_f = v \cdot \cos(\theta + \delta)$
+$\dot{y}_f = v \cdot \sin(\theta + \delta)$
+
+### 2. **Heading Change Equation**
+
+$\dot{\theta} = \frac{v \cdot \sin(\delta)}{L}$
+
+This tells us how quickly the robot is turning.
+
+* The sharper the steering (larger $\delta$), the faster the rotation
+* The larger the wheelbase $L$, the slower the turn
+
+> 🔁 **Note**: This differs slightly from the rear axle model, which uses $\tan(\delta)$. Both are valid but are derived from different geometric approximations.
+
+---
+
+## ✨ Example Calculation
+
+### Given:
+
+* $v = 2$ m/s
+* $\theta = 30^\circ$, $\delta = 25^\circ$
+* $L = 2$ m
+
+### Step-by-step:
+
+* $\theta + \delta = 55^\circ$
+* $\cos(55^\circ) \approx 0.5736$, $\sin(55^\circ) \approx 0.8192$
+* $\sin(25^\circ) \approx 0.4226$
+
+Then:
+
+* $\dot{x}_f = 2 \cdot 0.5736 = 1.147$ m/s
+* $\dot{y}_f = 2 \cdot 0.8192 = 1.638$ m/s
+* $\dot{\theta} = \frac{2 \cdot 0.4226}{2} = 0.423$ rad/s
+
+---
+
+## 🔄 Summary Table (Comparison)
+
+| Quantity         | Rear Axle Model            | Front Axle Model           |
+| ---------------- | -------------------------- | -------------------------- |
+| Motion Direction | $\theta$                   | $\theta + \delta$          |
+| $\dot{x}$        | $v \cos(\theta)$           | $v \cos(\theta + \delta)$  |
+| $\dot{y}$        | $v \sin(\theta)$           | $v \sin(\theta + \delta)$  |
+| $\dot{\theta}$   | $\frac{v \tan(\delta)}{L}$ | $\frac{v \sin(\delta)}{L}$ |
+
+---
+
+## ✅ When Should You Use the Front Axle Model?
+
+* When steering precision is important
+* When you're modeling or controlling steering mechanisms directly
+* When front wheel behavior defines where the robot will go next
+
+
+# 📘 Center of Gravity (CG) Bicycle Model 
+
+![image](https://github.com/user-attachments/assets/58da17eb-5026-428e-822d-c3429b7e3e0f)
+
+
+This README explains the **Center of Gravity (CG)** bicycle model, where the reference point is at the **midpoint between front and rear axles**, a more physically accurate version for simulations.
+
+---
+
+## 🧠 Key Concept Table
+
+| Symbol       | Meaning                                          | Units              |
+| ------------ | ------------------------------------------------ | ------------------ |
+| $(x_c, y_c)$ | Position of the CG                               | meters             |
+| $\theta$     | Heading angle (vehicle orientation)              | radians            |
+| $\delta$     | Steering angle of front wheel                    | radians or degrees |
+| $\beta$      | Slip angle (difference in heading vs. CG motion) | radians            |
+| $v$          | Forward speed (measured at CG)                   | m/s                |
+| $L$          | Wheelbase (front to rear axle)                   | meters             |
+| $l_r$        | Distance from CG to rear axle                    | meters             |
+
+---
+
+## 🔁 Equations (Motion from CG)
+
+### Motion Equations:
+
+* $\dot{x}_c = v \cos(\theta + \beta)$
+* $\dot{y}_c = v \sin(\theta + \beta)$
+
+### Angular Velocity:
+
+* $\dot{\theta} = \frac{v \cos(\beta) \tan(\delta)}{L}$
+
+### Slip Angle $\beta$:
+
+* $\beta = \tan^{-1}\left( \frac{l_r \tan(\delta)}{L} \right)$
+
+This accounts for the fact that the **CG moves in a slightly different direction** than the heading angle.
+
+---
+
+## 🎯 Why CG Model Is Important
+
+* More realistic in physics engines
+* Vehicle motion is centered on CG (center of mass)
+* Used in **control systems**, **self-driving simulations**, and **advanced path planners**
+
+---
+
+## 📏 Visual Intuition
+
+In the diagram:
+
+* $v$ is drawn at the **front wheel** because that is the control input.
+* But motion of the whole car (CG) happens **at angle $\theta + \beta$**, not just $\theta$ or $\delta$.
+* $\beta$ is a small correction to shift movement direction based on front-wheel steering.
+
+---
+
+## ✅ Example
+
+**Given:**
+
+* $v = 5$ m/s
+* $\delta = 25^\circ = 0.436$ rad
+* $L = 2.5$ m, $l_r = 1.25$ m (i.e. CG is at center)
+
+### Step 1: Compute $\beta$
+
+$$
+\beta = \tan^{-1}\left(\frac{1.25 \cdot \tan(0.436)}{2.5}\right) \approx \tan^{-1}(0.2331) \approx 0.229\ \text{rad}
+$$
+
+### Step 2: Compute Angular Velocity
+
+$$
+\dot{\theta} = \frac{5 \cdot \cos(0.229) \cdot \tan(0.436)}{2.5} \approx \frac{5 \cdot 0.974 \cdot 0.4663}{2.5} \approx 0.908\ \text{rad/s}
+$$
+
+---
+
+## 🧭 Summary Table (Rear vs Front vs CG)
+
+| Model             | Position Used | $\dot{\theta}$ Formula                 | Motion Direction  |
+| ----------------- | ------------- | -------------------------------------- | ----------------- |
+| Rear Axle         | $(x_r, y_r)$  | $\frac{v \tan(\delta)}{L}$             | $\theta$          |
+| Front Axle        | $(x_f, y_f)$  | $\frac{v \sin(\delta)}{L}$             | $\theta + \delta$ |
+| Center of Gravity | $(x_c, y_c)$  | $\frac{v \cos(\beta) \tan(\delta)}{L}$ | $\theta + \beta$  |
+
+---
+
+
