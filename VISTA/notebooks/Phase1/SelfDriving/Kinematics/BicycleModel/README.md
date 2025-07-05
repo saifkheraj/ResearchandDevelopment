@@ -198,6 +198,13 @@ The model uses:
 
 ## 📐 Kinematic Equations (Rear Axle Reference)
 
+     |
+     |   v·sinθ  ← this is the y-part (vertical)
+     |   
+     |_____→
+       v·cosθ  ← this is the x-part (horizontal)
+
+
 ### 1. **Position Update Equations**
 
 $\dot{x}_r = v \cdot \cos(\theta)$
