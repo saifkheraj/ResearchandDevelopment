@@ -907,7 +907,7 @@ correct_result = observer_pos + (R @ relative_pos)
 *This transformation is the foundation of how autonomous vehicles navigate, robots map their environment, and GPS systems work. Master this concept, and you'll understand a fundamental building block of modern technology!*
 
 
-## 🤖 Robot Kinematics: Holonomic vs. Nonholonomic, Tangents, and Trigonometry
+# 🤖 Robot Kinematics: Holonomic vs. Nonholonomic, Tangents, and Trigonometry
 
 A complete beginner-to-pro guide on understanding how robots move, what it means to be nonholonomic, how velocity splits into components, and why robots can’t just "go left." Includes visual explanations, real-life analogies, and math that actually makes sense.
 
@@ -941,9 +941,9 @@ A **nonholonomic** robot (like a car) **cannot move sideways**. It:
 
 A **nonholonomic system** has constraints on its **velocity**, not just position.
 
-#### Equation:
+**Equation:**
 
-```
+```math
 \dot{y} \cos(\theta) - \dot{x} \sin(\theta) = 0
 ```
 
@@ -987,9 +987,9 @@ Robot is moving at:
 
 Then:
 
-```
-\dot{x} = 10 \cdot \cos(60^\circ) = 5 \text{ m/s}
-\dot{y} = 10 \cdot \sin(60^\circ) \approx 8.66 \text{ m/s}
+```math
+\dot{x} = 10 \cdot \cos(60^\circ) = 5 \ \text{m/s} 
+\dot{y} = 10 \cdot \sin(60^\circ) \approx 8.66 \ \text{m/s}
 ```
 
 So it moves:
@@ -1022,13 +1022,7 @@ So it moves:
 
 ### The Robot’s Motion is:
 
-```
-Always in the direction it’s facing
-```
-
-That direction forms a vector $v$, and we use:
-
-```
+```math
 \dot{x} = v \cdot \cos(\theta)
 \dot{y} = v \cdot \sin(\theta)
 ```
@@ -1039,7 +1033,7 @@ To understand how it moves in x and y coordinates.
 
 Any sideways movement would break the constraint:
 
-```
+```math
 \dot{y} \cos(\theta) - \dot{x} \sin(\theta) = 0
 ```
 
@@ -1055,42 +1049,38 @@ Which means: the robot can only move in its heading direction.
 * 📏 Motion is always **tangent to the path** — not jumping sideways.
 * 🧮 Formula to remember:
 
-  ```
-  ```
-
+```math
 \dot{x} = v \cos(\theta), \quad \dot{y} = v \sin(\theta)
-
 ```
-
----
-
-## 📚 Bonus Real-Life Analogy Table
-
-| System           | Holonomic? | Can Slide? | Can Rotate in Place? | Turns by Curving? |
-|------------------|------------|------------|------------------------|--------------------|
-| Car              | ❌ No       | ❌ No       | ❌ Not easily          | ✅ Yes             |
-| Drone            | ✅ Yes      | ✅ Yes      | ✅ Yes                 | ❌ Doesn’t need    |
-| Roomba Robot     | ❌ No       | ❌ No       | ✅ Yes (spin in place) | ✅ Yes             |
-| Omni-Wheel Bot   | ✅ Yes      | ✅ Yes      | ✅ Yes                 | ❌ Doesn’t need    |
 
 ---
 
 ## 🛠️ Suggested Visuals
 
-- A diagram showing tangent velocity vector
-- Comparison of holonomic vs. nonholonomic paths in a grid
-- Triangle showing \( v \), \( \dot{x} \), \( \dot{y} \) with angle \( \theta \)
+* A diagram showing tangent velocity vector
+* Comparison of holonomic vs. nonholonomic paths in a grid
+* Triangle showing \$v\$, \$\dot{x}\$, \$\dot{y}\$ with angle \$\theta\$
+
+---
+
+## 📚 Bonus Real-Life Analogy Table
+
+| System         | Holonomic? | Can Slide? | Can Rotate in Place?  | Turns by Curving? |
+| -------------- | ---------- | ---------- | --------------------- | ----------------- |
+| Car            | ❌ No       | ❌ No       | ❌ Not easily          | ✅ Yes             |
+| Drone          | ✅ Yes      | ✅ Yes      | ✅ Yes                 | ❌ Doesn’t need    |
+| Roomba Robot   | ❌ No       | ❌ No       | ✅ Yes (spin in place) | ✅ Yes             |
+| Omni-Wheel Bot | ✅ Yes      | ✅ Yes      | ✅ Yes                 | ❌ Doesn’t need    |
 
 ---
 
 ## 📥 Next Steps
 
 You can now:
-- Simulate robot movement using these formulas
-- Plan curved paths for differential-drive robots
-- Understand when to use sine/cosine in robot control
-- Distinguish between different types of motion constraints
+
+* Simulate robot movement using these formulas
+* Plan curved paths for differential-drive robots
+* Understand when to use sine/cosine in robot control
+* Distinguish between different types of motion constraints
 
 > Ready to move on to wheel kinematics or full robot control systems? Let’s go! 🚀
-
-```
