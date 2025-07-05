@@ -1,4 +1,4 @@
-# 🟠 Circle Geometry in Bicycle Kinematics (for 12th Grade Students)
+# 🟠 Circle Geometry in Bicycle Kinematics 
 
 This section expands on the circular motion part of the bicycle kinematic model. It helps you understand how circles, arcs, angles, rotation, and forward movement come together when a robot or car turns.
 
