@@ -486,3 +486,124 @@ $$
 ---
 
 
+# 🧮 State-Space Representation of the CG Bicycle Model
+
+This guide explains the **state-space representation** of the **Center-of-Gravity (CG) kinematic bicycle model**, used in self-driving cars and robotics. It focuses on modifying the model to handle **steering rate input**.
+
+---
+
+## 🚗 Why This Matters
+
+In real systems, the steering angle $\delta$ can't instantly change. We need a model that allows us to control **how fast the steering angle changes** — this is where the **rate of steering input** $\varphi = \dot{\delta}$ comes in.
+
+---
+
+## 📦 State and Inputs
+
+### State Vector:
+
+$$
+\mathbf{x} = \begin{bmatrix} x_c \\ y_c \\ \theta \\ \delta \end{bmatrix}
+$$
+
+* $x_c, y_c$: position of the **center of gravity (CG)**
+* $\theta$: heading angle
+* $\delta$: steering angle
+
+### Input Vector:
+
+$$
+\mathbf{u} = \begin{bmatrix} v \\ \varphi \end{bmatrix}
+$$
+
+* $v$: forward velocity
+* $\varphi$: **steering rate input**, i.e., $\dot{\delta}$
+
+---
+
+## 📐 Model Equations
+
+### 1. Position Update:
+
+$$
+\dot{x}_c = v \cdot \cos(\theta + \beta)
+$$
+
+$$
+\dot{y}_c = v \cdot \sin(\theta + \beta)
+$$
+
+### 2. Heading Angle:
+
+$$
+\dot{\theta} = \frac{v \cdot \cos(\beta) \cdot \tan(\delta)}{L}
+$$
+
+### 3. Steering Angle Dynamics:
+
+$$
+\dot{\delta} = \varphi
+$$
+
+### 4. Slip Angle $\beta$:
+
+$$
+\beta = \tan^{-1}\left(\frac{l_r \cdot \tan(\delta)}{L}\right)
+$$
+
+Where:
+
+* $l_r$: distance from CG to **rear axle**
+* $L = l_f + l_r$: total wheelbase
+
+---
+
+## 🤔 What Is $\beta$?
+
+$\beta$ is the **slip angle** — the correction needed because the CG is offset from the rear and front axles. It shifts the direction of velocity slightly.
+
+---
+
+## 📊 Why Use This Form?
+
+| Advantage           | Reason                                                |
+| ------------------- | ----------------------------------------------------- |
+| More realistic      | Models steering delay via $\varphi$                   |
+| Controller-friendly | Easily used with MPC, LQR, Kalman Filters             |
+| Smoother simulation | Velocity and turning are decoupled                    |
+| Continuous control  | You can apply rate of change instead of hard switches |
+
+---
+
+## 🔁 Example Walkthrough
+
+**Given:**
+
+* $v = 2\,m/s$
+* $\delta = 25^\circ = 0.436\,rad$
+* $L = 2.5\,m,\ l_r = 1.25\,m$
+
+1. $\tan(\delta) \approx 0.466$
+2. $\beta = \tan^{-1}\left(\frac{1.25 \cdot 0.466}{2.5}\right) = \tan^{-1}(0.233) \approx 0.229\,rad$
+3. $\dot{x}_c = 2 \cdot \cos(\theta + 0.229)$
+4. $\dot{\theta} = \frac{2 \cdot \cos(0.229) \cdot 0.466}{2.5} \approx 0.362\,rad/s$
+
+---
+
+## 🔄 Summary
+
+| Term           | Meaning                         |
+| -------------- | ------------------------------- |
+| $\delta$       | Steering angle                  |
+| $\varphi$      | Steering rate input             |
+| $\beta$        | Slip angle due to CG offset     |
+| $\dot{\theta}$ | Heading rate (angular velocity) |
+| $v$            | Forward velocity                |
+
+---
+
+## 💬 Final Intuition
+
+This model lets you **command how fast the steering changes** rather than directly commanding the steering. This gives smoother motion, realistic delays, and control flexibility — perfect for robotic simulations and autonomous navigation.
+
+Let me know if you'd like to simulate this in Python!
