@@ -963,6 +963,8 @@ If a robot wants to reach a point to its left:
 > The red dashed line in diagrams represents this curved path.
 
 ---
+![image](https://github.com/user-attachments/assets/5592b432-422c-4c4c-9cdd-4230bed98b33)
+
 
 ## 📐 Part 3: Velocity Components — Sine & Cosine
 
