@@ -56,6 +56,9 @@ When a robot (or car) turns using a bicycle model, we care about:
 
 ## 🔁 Kinematic Equations for Turning
 
+![image](https://github.com/user-attachments/assets/bf01d5ec-e06d-4cb8-adee-23f575fbdb58)
+
+
 ### 1. **Relationship Between Speed and Rotation**
 
 $\omega = \frac{v}{R}$
