@@ -167,3 +167,123 @@ $\omega = \frac{v}{R}$
 ---
 
 Understanding circle geometry **and** kinematics together gives you a full picture of how a robot moves, turns, and calculates its position over time.
+
+
+
+# 🧮 Rear Axle Bicycle Model – Simplified README (For 12th Grade Students)
+
+This document explains the **Rear Axle Bicycle Model** — a way to describe the motion of a car or robot when its **rear axle midpoint** is used as the reference point.
+
+We’ll break down the meaning of each formula, how the robot moves in 2D, and avoid confusion between angular velocity symbols like $\omega$ and $\dot{\theta}$.
+
+
+
+---
+
+## 🚗 What is the Rear Axle Model?
+
+In this model, we track the robot’s motion using the **center of the rear axle**:
+
+* All motion is computed from that rear point
+* This makes the math cleaner and more stable for control
+
+The model uses:
+
+* **$v$**: Forward speed (how fast the robot moves)
+* **$\theta$**: Heading angle (the direction the robot is facing)
+* **$\delta$**: Steering angle (angle of the front wheel)
+* **$L$**: Distance between front and rear axle (wheelbase)
+
+---
+
+## 📐 Kinematic Equations (Rear Axle Reference)
+
+### 1. **Position Update Equations**
+
+$\dot{x}_r = v \cdot \cos(\theta)$
+$\dot{y}_r = v \cdot \sin(\theta)$
+
+These tell us how the **rear axle center point** moves forward:
+
+* It follows the direction of the heading angle $\theta$
+* $v$ breaks into x and y motion using basic trigonometry
+
+### 2. **Heading Change (Rotation) Equation**
+
+$\dot{\theta} = \frac{v \cdot \tan(\delta)}{L}$
+
+This tells us **how quickly the robot is turning**.
+
+> 💡 **Important Note:**
+> $\dot{\theta}$ ("theta dot") means the **rate of change of the heading angle**, and it is the **same thing as angular velocity**, which is often written as:
+>
+> $\omega = \dot{\theta}$
+>
+> Both symbols represent the same concept: **how fast the robot is turning**, in **radians per second**.
+
+---
+
+## 🧠 How the Robot Moves (Step-by-Step Intuition)
+
+1. **You turn the front wheel** → this sets $\delta$
+2. **$\delta$ defines a turning circle** (small $\delta$ = wide turn, large $\delta$ = tight turn)
+3. The robot moves forward along that circle, at speed $v$
+4. It moves forward and rotates at the same time, using:
+
+   * $\dot{x}_r = v \cos\theta$
+   * $\dot{y}_r = v \sin\theta$
+   * $\dot{\theta} = \omega = \frac{v \tan(\delta)}{L}$
+
+---
+
+## ✨ Example Walkthrough
+
+### Given:
+
+* $v = 2$ m/s
+* $\delta = 25^\circ$
+* $L = 2$ m
+* $\theta = 30^\circ$
+
+### Step 1: Calculate Trig Terms
+
+* $\cos(30^\circ) \approx 0.866$
+* $\sin(30^\circ) = 0.5$
+* $\tan(25^\circ) \approx 0.466$
+
+### Step 2: Compute Motion
+
+* $\dot{x}_r = 2 \cdot 0.866 = 1.73 \, \text{m/s}$
+* $\dot{y}_r = 2 \cdot 0.5 = 1.00 \, \text{m/s}$
+* $\dot{\theta} = \frac{2 \cdot 0.466}{2} = 0.466 \, \text{rad/s}$
+
+### Interpretation:
+
+* The robot moves forward-right
+* It’s rotating left at 0.466 rad/s (angular velocity)
+
+---
+
+## 🧭 Summary Table
+
+| Symbol                   | Meaning                                   |
+| ------------------------ | ----------------------------------------- |
+| $x_r, y_r$               | Position of rear axle midpoint            |
+| $\theta$                 | Heading direction (angle robot is facing) |
+| $\delta$                 | Steering angle (angle of front wheel)     |
+| $L$                      | Distance between wheels (wheelbase)       |
+| $v$                      | Forward velocity (speed)                  |
+| $\dot{x}_r, \dot{y}_r$   | Motion in x/y directions                  |
+| $\dot{\theta}$, $\omega$ | Angular velocity (rotation rate)          |
+
+> ✅ Remember: $\dot{\theta} = \omega$ — they are two names for the same thing.
+
+---
+
+## 📌 When to Use This Model
+
+This is used when:
+
+* You're building a simulator for a car or mobile robot
+* You want to track its position and rotation based on speed and steering
+* You need something simple but realistic enough to work in real life
