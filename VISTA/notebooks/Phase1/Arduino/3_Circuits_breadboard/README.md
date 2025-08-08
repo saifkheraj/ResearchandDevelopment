@@ -112,6 +112,14 @@ A **resistor** controls how much electricity flows through the component. It act
 | **1KΩ** | Brown-Black-Red | 1+0 = 10, add 2 zeros = 1000 |
 | **10KΩ** | Brown-Black-Orange | 1+0 = 10, add 3 zeros = 10000 |
 
+<img width="1930" height="762" alt="image" src="https://github.com/user-attachments/assets/9ebccd30-1cdb-41ce-9a4f-a669f5c318b0" />
+
+
+<img width="2106" height="1266" alt="image" src="https://github.com/user-attachments/assets/d4217252-663d-4326-bfcc-20f3dbbd368b" />
+
+
+https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code
+
 ---
 
 ## Part 2: Basic Electrical Theory
@@ -336,4 +344,5 @@ It’s okay to be confused at first. Try to:
 * Ask questions and explore slowly
 
 You just built your first circuit. Congratulations! 🎉
+
 
