@@ -65,6 +65,9 @@ Think of electricity like water flowing through pipes:
 ### Breadboard
 A **reusable** building platform for circuits (no soldering needed!)
 
+<img width="676" height="415" alt="image" src="https://github.com/user-attachments/assets/495085d8-c2df-49cd-9513-161161f1dd6e" />
+
+
 #### How Breadboard Connections Work:
 ```
 Power Rails (Top & Bottom):
@@ -425,3 +428,4 @@ delay(50);    // Very fast blink
 Remember: **Every expert was once a beginner!** Take your time, don't rush, and enjoy the learning process. Electronics is all about experimenting and discovering how things work.
 
 Happy building! 🚀
+
