@@ -133,84 +133,11 @@ vertically  vertically
 
 **For this project, use 220Ω (Red-Red-Brown)**
 
----
+<img width="2050" height="1300" alt="image" src="https://github.com/user-attachments/assets/4d2cbb60-63ff-4213-830b-e9824fce308e" />
 
-## Circuit Simulation (Practice First)
-
-**Why simulate first?**
-- No risk of breaking components
-- Easy to fix mistakes
-- Visual feedback shows connections
-- Free to use!
-
-### Step-by-Step Simulation (Like Following a Recipe)
-
-**Think of this like connecting LEGO blocks - each piece clicks into the next one!**
-
-#### Step 1: Open Tinkercad
-1. Go to [Tinkercad Circuits](https://www.tinkercad.com/learn/circuits)
-2. Click "Create new circuit" 
-3. You'll see an empty workspace
-
-#### Step 2: Get Your "Ingredients"
-Drag these items from the right panel onto your workspace:
-- **Arduino Uno R3** (the big board with lots of holes)
-- **Breadboard** (looks like a white rectangle with tiny holes)
-- **LED** (small light bulb icon - choose red)
-- **Resistor** (looks like a small cylinder - set to 220Ω)
-
-#### Step 3: Make Wire Connections (Click and Drag)
-**In Tinkercad, you make "wires" by clicking on one spot, then clicking on another spot.**
-
-**Connection 1: Give the breadboard power**
-- **CLICK** on the Arduino spot labeled "5V" 
-- **CLICK** on the red line at the top of the breadboard
-- (You just made an invisible wire! The breadboard now has power)
-
-- **CLICK** on the Arduino spot labeled "GND" 
-- **CLICK** on the blue line at the top of the breadboard
-- (You just connected the "return path" for electricity)
-
-**Connection 2: Place the LED**
-- **DRAG** the LED to the middle of the breadboard
-- Put it so it bridges the gap in the middle
-- The LED will snap into place with legs in two different rows
-
-**Connection 3: Connect LED to ground (return path)**
-- **CLICK** on the LED's short leg (bottom of LED)
-- **CLICK** on one end of the resistor
-- **CLICK** on the other end of the resistor  
-- **CLICK** on the blue line (this completes the path back to Arduino)
-
-**Connection 4: Connect LED to Arduino control**
-- **CLICK** on the LED's long leg (top of LED)
-- **CLICK** on the Arduino pin labeled "13"
-
-#### Step 4: Test Your Circuit
-- Click the "Start Simulation" button
-- The LED should light up!
-
-**If nothing happens:** Click on any wire to see if it's connected properly. Connected parts will light up in Tinkercad.
-
-**Visual Tip:** Think of it like a train track - electricity needs a complete loop to flow: Arduino Pin 13 → LED → Resistor → back to Arduino Ground
+https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code
 
 ---
-
-## Building the Real Circuit
-
-### What You Need
-- 1 Arduino Uno board
-- 1 Breadboard
-- 1 Red LED
-- 1 Resistor (220Ω, Red-Red-Brown)
-- 2 Jumper wires (1 black for ground, 1 any color)
-
-### Safety First
-- **Unplug Arduino** from computer before building
-- **Double-check connections** before powering on
-- **No short circuits** - don't connect + and - directly
-
-### Step-by-Step Real Circuit Build (Like Building with LEGO)
 # Arduino + LED + Resistor Breadboard Circuit
 
 This guide explains how to connect an LED to an Arduino using a breadboard and a resistor, following the step-by-step method used in the example video.
@@ -292,4 +219,3 @@ Arduino pin 12 (+5V)
 > Example layout from Tinkercad showing Arduino, breadboard, LED, resistor, and wiring.
 
 You can recreate this in [Tinkercad Circuits](https://www.tinkercad.com/circuits) and run the simulation before building it physically.
-
