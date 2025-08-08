@@ -163,26 +163,41 @@ This guide explains how to connect an LED to an Arduino using a breadboard and a
 * Add a **red LED**.
 * Add a **220 Ω resistor**.
 
+
+
 ### 2️⃣ Connect Arduino GND to Breadboard Ground
 
 * Locate a **GND** pin on the Arduino (labeled `GND`).
 * Use a **black jumper wire** from Arduino GND → breadboard **blue “–” rail**.
 * This makes the entire “–” rail on the breadboard connected to Arduino’s ground (0V reference).
 
+<img width="2178" height="1182" alt="image" src="https://github.com/user-attachments/assets/6f6e5696-4028-427b-bfa8-0cc3440b4cdd" />
+
+
 ### 3️⃣ Place the LED
 
 * Insert the **short leg** (cathode) into a row connected to the **blue “–” rail** (ground).
 * Insert the **long leg** (anode) into a different row.
 
+<img width="1600" height="1224" alt="image" src="https://github.com/user-attachments/assets/b5941a87-9b06-49b1-b480-a51581b63450" />
+
+
 ### 4️⃣ Add the Resistor
 
-* Connect **one end** of the resistor to the row with the LED’s **long leg** (anode).
+* Connect **one end** of the resistor to the row with the LED’s **long leg** (anode). Resistor placement doesnt matter, LED matters.
 * Connect the **other end** of the resistor to a new row (not touching ground).
+
+
+<img width="2282" height="1212" alt="image" src="https://github.com/user-attachments/assets/426030ec-8887-42ea-856e-f384dc1ab3be" />
+
 
 ### 5️⃣ Connect Arduino Digital Pin
 
 * Use a jumper wire from **Arduino digital pin 12** → the resistor’s free end row.
 * This allows Arduino to send current to the LED through the resistor.
+
+  <img width="2040" height="1214" alt="image" src="https://github.com/user-attachments/assets/70be38b3-0cb4-47ef-bc0e-f50403e4445f" />
+
 
 ---
 
@@ -219,3 +234,4 @@ Arduino pin 12 (+5V)
 > Example layout from Tinkercad showing Arduino, breadboard, LED, resistor, and wiring.
 
 You can recreate this in [Tinkercad Circuits](https://www.tinkercad.com/circuits) and run the simulation before building it physically.
+
