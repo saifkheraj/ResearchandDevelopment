@@ -11,7 +11,7 @@ In this section, we focus on **digital pins**.
 
 ---
 
-## 🔌 Digital Pins on Arduino
+## 🔌 Digital Pins on Arduino 
 
 * On the **Arduino Uno**, there are **14 digital pins**, numbered from `0` to `13`.
 
