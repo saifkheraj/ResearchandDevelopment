@@ -317,6 +317,9 @@ Loss = Σ (loss for each disease)
 
 **Input**: Chest X-ray images with labels
 
+<img width="266" height="309" alt="image" src="https://github.com/user-attachments/assets/11df4927-a905-4b2c-ad47-f655552463fc" />
+
+
 **Output**: Probabilities for each disease class
 
 **Algorithm Components**:
@@ -330,6 +333,10 @@ Loss = Σ (loss for each disease)
 - Model produces random predictions
 - Example: 0.48 probability for mass in image with mass (target = 1)
 - Example: 0.51 probability for mass in normal image (target = 0)
+
+<img width="734" height="335" alt="image" src="https://github.com/user-attachments/assets/ec968bce-b59d-4295-81dc-12760010abed" />
+
+For our own reference, a mass is defined as a lesion, or in other words damage of tissue, seen on a chest X-ray as greater than 3 centimeters in diameter. 
 
 **Step 2: Loss Calculation**
 - Measure error between predictions and true labels
@@ -754,4 +761,5 @@ Building deep learning models for medical image classification requires careful 
 5. Ensuring ethical and responsible deployment
 
 By following the guidelines and techniques outlined in this document, you can develop effective AI models that have the potential to improve medical diagnosis and patient outcomes while maintaining the high standards required in healthcare applications.
+
 
