@@ -31,6 +31,11 @@ This document provides a detailed guide to building and training deep learning m
 
 **Architecture**: Convolutional Neural Networks (CNN)
 
+<img width="342" height="277" alt="image" src="https://github.com/user-attachments/assets/80344f2d-c6ec-456f-a9e6-82bae3d080fe" />
+
+<img width="275" height="284" alt="image" src="https://github.com/user-attachments/assets/77f3ac49-25c2-4b6f-9407-a49a74605d78" />
+
+
 ---
 
 ### 2. Ophthalmology: Diabetic Retinopathy Detection
@@ -44,6 +49,9 @@ This document provides a detailed guide to building and training deep learning m
 - Performance: Comparable to ophthalmologists
 
 **Clinical Significance**: Diabetic retinopathy is a major cause of blindness; currently requires time-consuming manual examination by trained clinicians
+
+<img width="348" height="309" alt="image" src="https://github.com/user-attachments/assets/12422a3d-6901-4b07-aa39-a948f800b75b" />
+
 
 ---
 
@@ -62,6 +70,9 @@ This document provides a detailed guide to building and training deep learning m
 - Trains model on hundreds of thousands of patches
 
 **Applications**: Similar patch-based approach used for brain tumor segmentation
+
+<img width="702" height="289" alt="image" src="https://github.com/user-attachments/assets/b3662c9a-c4ff-4b39-a129-a278ed70e74f" />
+
 
 ---
 
@@ -743,3 +754,4 @@ Building deep learning models for medical image classification requires careful 
 5. Ensuring ethical and responsible deployment
 
 By following the guidelines and techniques outlined in this document, you can develop effective AI models that have the potential to improve medical diagnosis and patient outcomes while maintaining the high standards required in healthcare applications.
+
